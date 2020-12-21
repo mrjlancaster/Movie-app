@@ -90,7 +90,8 @@ header {
 }
 
 /* UPCOMING MOVIES */
-.upcoming {
+.upcoming,
+.top__rated {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -98,17 +99,20 @@ header {
     padding: 10px;
 }
 
-.upcoming__movies {
+.upcoming__movies,
+.top__rated--movies {
     display: flex;
     overflow: scroll;
 }
 
-.upcoming__heading {
+.upcoming__heading,
+.top__rated--heading {
     margin-left: 10px;
     color: #fff;
 }
 
-.upcoming__card--wrapper {
+.upcoming__card--wrapper,
+.top__rated--wrapper {
     display: flex;
     flex-direction: column;
     width: 280px;
@@ -117,9 +121,14 @@ header {
 }
 
 .upcoming__poster {
-    background-color: antiquewhite;
-    width: 260px;
-    height: 300px;
+    cursor: pointer;
+    width: auto;
+    height: 450px;
+}
+
+.upcoming__poster:hover {
+    transition: all .3s ease;
+    opacity: .4;
 }
 
 
@@ -141,8 +150,8 @@ header {
 }
 
 .movie__poster {
-    height: 400px;
-    width: 280px;
+    height: 450px;
+    width: auto;
     border-radius: 4px;
     cursor: pointer;
 }
