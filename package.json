@@ -1,0 +1,20 @@
+{
+  "name": "movie-ui",
+  "version": "1.0.0",
+  "description": "Movie search. Search for any movie to get their information.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrjlancaster/Movie-ui.git"
+  },
+  "author": "Jonathan Lancaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrjlancaster/Movie-ui/issues"
+  },
+  "homepage": "https://github.com/mrjlancaster/Movie-ui#readme",
+  "dependencies": {}
+}
