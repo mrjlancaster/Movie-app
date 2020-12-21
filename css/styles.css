@@ -35,7 +35,6 @@ header {
 }
 
 .nav__list {
-    max-width: 80%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -52,7 +51,7 @@ header {
 
 /* SEARCH INPUT CONTAINER STYLES */
 .search__input--container {
-    margin-top: 80px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
@@ -74,19 +73,50 @@ header {
     outline: none;
 }
 
+/* UPCOMING MOVIES */
+.upcoming {
+    display: flex;
+    height: 500px;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.upcoming__heading {
+    background-color: blanchedalmond;
+}
+
+.upcoming__card--wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+
+    width: 280px;
+    height: auto;
+    margin: 40px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upcoming__poster {
+    background-color: antiquewhite;
+    width: 260px;
+    height: 300px;
+}
+
 
 /* OUTPUT SECTION */
 .output {
-    margin-top: 80px;
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .template__wrapper {
-    width: 300px;
+    width: 280px;
     height: auto;
-    margin: 40px 10px;
+    margin: 40px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,9 +138,8 @@ header {
     padding: 10px;
     color: #fff;
     font-weight: 200;
-    font-size: 17px;
+    font-size: 13px;
     text-align: center;
-    letter-spacing: .1em;
 }
 
 .more__details {
