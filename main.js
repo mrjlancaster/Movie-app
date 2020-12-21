@@ -40,15 +40,15 @@ const displaySearch = (obj) => {
 
 // Display upcoming movies
 const displayUpcoming = (obj) => {
-    const upcoming = document.querySelector('.upcoming');
+    const upcoming = document.querySelector('.upcoming__movies');
     const movies = obj.results;
     
     let movie = '';
     movies.forEach(item => {
         movie +=`
-            <div class="upcoming__card--wrapper">
-                <img src=${imageBaseURL + item.poster_path} class="movie__poster" alt="" />
-            </div>`;
+        <div class="upcoming__card--wrapper">
+            <img src=${imageBaseURL + item.poster_path} class="movie__poster" alt="" />
+        </div>`;
     })
 
     // Output results

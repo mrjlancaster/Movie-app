@@ -20,15 +20,14 @@ body {
 
 /* HEADER STYLES */
 header {
-    position: relative;
-    height: 50px;
+    /* background-color: cadetblue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
 
 .logo {
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    transform: translateY(-50%);
     font-size: 30px;
     font-weight: 200;
     color: #ffff;
@@ -51,51 +50,70 @@ header {
 
 /* SEARCH INPUT CONTAINER STYLES */
 .search__input--container {
-    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
 
-.search__input {
-    width: 60%;
+.search__bar {
+    background: #273c75;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    width: 300px;
     height: 35px;
-    padding: 10px;
+}
+
+
+.search__input {
+    width: 80%;
+    margin-left: 15px;
+    border: none;
+    height: 80%;
+    background: none;
+    outline: none;
+    color: #fff;
+}
+
+.search__input::placeholder {
+    color: #ffff;
 }
 
 .search {
+    height: 75%;
     cursor: pointer;
-    background:#1e90ff;
-    color: #ffff;
-    padding: 0 20px;
     border: none;
-    margin-left: 10px;
-    border-radius: 2px;
+    padding: 0 8px;
+    border-radius: 50px;
     outline: none;
+    margin-right: 5px
 }
 
 /* UPCOMING MOVIES */
 .upcoming {
+    margin-top: 100px;
     display: flex;
-    height: 500px;
+    flex-direction: column;
+    height: 520px;
     padding: 10px;
+}
+
+.upcoming__movies {
+    display: flex;
     overflow: scroll;
 }
 
 .upcoming__heading {
-    background-color: blanchedalmond;
+    margin-left: 10px;
+    color: #fff;
 }
 
 .upcoming__card--wrapper {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
-
     width: 280px;
     height: auto;
     margin: 40px 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .upcoming__poster {
