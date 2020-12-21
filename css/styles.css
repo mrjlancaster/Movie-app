@@ -1,15 +1,15 @@
-/* CSS reset */
+/* CSS RESET */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Global styles */
+
+/* GLOBAL STYLES */
 body {
     background-color: #111518;
-    max-width: 1600px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -17,7 +17,8 @@ body {
     margin: 0 auto 50px auto;
 }
 
-/* Header styles */
+
+/* HEADER STYLES */
 header {
     position: relative;
     height: 50px;
@@ -49,7 +50,7 @@ header {
 }
 
 
-/* Search input container styles */
+/* SEARCH INPUT CONTAINER STYLES */
 .search__input--container {
     margin-top: 80px;
     display: flex;
@@ -70,7 +71,9 @@ header {
     border: none;
     margin-left: 10px;
     border-radius: 2px;
+    outline: none;
 }
+
 
 /* OUTPUT SECTION */
 .output {
@@ -100,7 +103,6 @@ header {
     transition: all .3s ease;
     opacity: .4;
 }
-
 
 .movie__title {
     padding: 10px;
