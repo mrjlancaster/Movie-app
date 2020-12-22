@@ -16,5 +16,7 @@
     "url": "https://github.com/mrjlancaster/Movie-ui/issues"
   },
   "homepage": "https://github.com/mrjlancaster/Movie-ui#readme",
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

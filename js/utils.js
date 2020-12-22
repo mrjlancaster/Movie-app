@@ -33,6 +33,8 @@ export const displayTopRatedMovies = (obj) => {
 
     // Output results
     topRated.innerHTML = movie;
+
+    console.log(obj);
 }
 
 
@@ -59,3 +61,32 @@ export const displaySearch = (obj) => {
     // Clear input field
     searchInput.value = '';
 }
+
+
+// // test handle one
+// export const displayOne = (obj) => {
+//     const output = document.querySelector('.welcome__section');
+//     const data = [obj];
+//     const movies = data[0].results[0];
+//     const title = movies.title;
+//     const poster = movies.poster_path;
+//     const story = movies.overview;
+
+//     let movie =
+//             `<div class="welcome__title--container">
+//             <div>
+//                 <h1 class="welcome__title">${title}</h1>
+//                 <p class="welcome__title--text">20 december <span>|</span> Fantasy, Drama</p>
+//             </div>
+//             </div>
+//             <div class="welcome__poster--container">
+//             <img class="welcome__poster" src=${imageBaseURL + poster} alt="">
+//             </div>
+//             <div class="description__container">
+//             <h3 class="welcome__story--title">The Story</h3>
+//             <p class="welcome__story--description">${story}</p>
+//             </div>`;
+
+//     // Output results
+//     output.innerHTML = movie;
+// }

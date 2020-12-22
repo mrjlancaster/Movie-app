@@ -14,7 +14,6 @@ const getData = (url, func) => {
         .then(data => func(data))
 }
 
-
 // Handle movie search
 const searchMovie = () => {
     searchButton.addEventListener('click', (e) => {
@@ -30,6 +29,7 @@ const handleUpcomingMovies = () => {
     getData(upcoming_URL, displayUpcomingMovies);
 }
 
+// Handle top rated movies
 const handleTopRatedMovies = () => {
     getData(topRated_URL, displayTopRatedMovies);
 }
@@ -38,3 +38,4 @@ const handleTopRatedMovies = () => {
 handleUpcomingMovies();
 handleTopRatedMovies();
 searchMovie();
+
