@@ -1,30 +1,46 @@
+const searchInput = document.querySelector('.search__input');
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 
 
 // HANDLE UPCOMING MOVIES DISPLAY
 export const displayUpcomingMovies = (obj) => {
     const upcoming = document.querySelector('.upcoming__movies');
-    const movies = obj.results;
-    
-    let movie = '';
-    movies.forEach(item => {
-        movie +=`
-        <div class="upcoming__card--wrapper">
-            <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
-            <div class="upcoming__description">
-                <h1 class="upcoming__title">${item.title}</h1>
-                <div>
-                    <p class="upcoming__story">Story</p>
-                    <p class="upcoming__story--description">${item.overview}</p>
-                </div>
+    const movie = obj.results[0];
 
+    let moviePoster = `
+        <div class="upcoming__card--wrapper">
+            <div class="upcoming__poster--container">
+                <img src=${imageBaseURL + movie.poster_path} class="upcoming__poster" alt="" />
+            </div>
+            <div class="upcoming__description">
+                <h1 class="upcoming__title">${movie.title}</h1>
+                <div class="upcoming__text--container">
+                    <p class="upcoming__story">Story</p>
+                    <p class="upcoming__story--description">${movie.overview}</p>
+                </div>
             </div>
         </div>`;
-    })
+    
+    // let movie = '';
+    // movies.forEach(item => {
+    //     movie +=`
+    //     <div class="upcoming__card--wrapper">
+    //         <div class="upcoming__poster--container">
+    //             <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
+    //         </div>
+    //         <div class="upcoming__description">
+    //             <h1 class="upcoming__title">${item.title}</h1>
+    //             <div>
+    //                 <p class="upcoming__story">Story</p>
+    //                 <p class="upcoming__story--description">${item.overview}</p>
+    //             </div>
+    //         </div>
+    //     </div>`;
+    // })
 
     // Output results
-    upcoming.innerHTML = movie;
-    console.log(movie.length);
+    upcoming.innerHTML = moviePoster;
+    console.log(movie);
 }
 
 // Display Top Rated movies
@@ -50,15 +66,21 @@ export const displayTopRatedMovies = (obj) => {
 
 // HANDLE SEARCH DISPLAY
 export const displaySearch = (obj) => {
+    const upcomingContainer = document.querySelector('.upcoming');
+    const topRatedContainer = document.querySelector('.top__rated');
     const output = document.querySelector('.output');
     const data = [obj];
     const movies = data[0].results;
+
+    // clear container
+    upcomingContainer.classList.add('hideAll');
+    topRatedContainer.classList.add('hideAll');
     
     let movie = '';
     movies.forEach(item => {
         movie +=`
             <div class="template__wrapper">
-                <img src=${imageBaseURL + item.poster_path} class="movie__poster" alt="" />
+                <img src=${imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />
                 <h4 class="movie__title">${item.title}</h4>
                 <button class="more__details">More details</button>
             </div>`;

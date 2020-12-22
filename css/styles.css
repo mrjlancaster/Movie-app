@@ -47,37 +47,6 @@ header {
     font-size: 14px;
 }
 
-/* UPCOMING CAROUSEL */
-.upcoming__carousel {
-    height: 700px;
-    border: 1px solid lightgray;
-}
-
-.upcoming__slide {
-    display: flex;
-}
-
-.one {
-    height: 300px;
-    width: 600px;
-    background-color: aqua;
-}
-.two {
-    height: 300px;
-    width: 600px;
-    background-color: aquamarine;
-}
-.three {
-    height: 300px;
-    width: 600px;
-    background-color: bisque;
-}
-.four {
-    height: 300px;
-    width: 600px;
-    background-color: cadetblue;
-}
-
 
 /* WELCOME SECTION */
 .welcome__section {
@@ -140,7 +109,6 @@ header {
     height: 35px;
 }
 
-
 .search__input {
     width: 80%;
     margin-left: 15px;
@@ -168,36 +136,58 @@ header {
 /* UPCOMING MOVIES */
 .upcoming {
     margin-top: 100px;
-    height: 500px;
-    border: 3px solid white;
+    /* border: 3px solid white; */
+    height: auto;
 }
 
-.upcoming__movies,
-.top__rated--movies {
+/* .upcoming__movies {
     display: flex;
-}
+    height: 500px;
+} */
 
 .upcoming__card--wrapper {
-    width: 100%;
     display: flex;
-    border: 3px solid white;    
+    margin-right: 20px;
 }
 
 .upcoming__poster {
     cursor: pointer;
-    width: 300px;
-    height: 490px;
+    width: 350px;
+    height: 500px;
 }
 
-.upcoming__poster:hover {
+.upcoming__title {
+    font-size: 60px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.upcoming__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upcoming__text--container {
+    width: 80%;
+    color: #fff;
+    opacity: .7;
+}
+
+/* .upcoming__poster:hover {
     transition: all .3s ease;
     opacity: .4;
-}
+} */
 
 /* TOP RATED MOVIES */
 .top__rated {
     margin-top: 100px;
     height: auto;
+}
+
+.top__rated--movies {
+    display: flex;
 }
 
 .top__rated--wrapper {
@@ -221,31 +211,42 @@ header {
 }
 
 
-/* OUTPUT SECTION */
+/* SEARCH OUTPUT SECTION */
+.search__results {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search__results--heading {
+    text-align: center;
+    font-weight: 200;
+    font-size: 30px;
+    color: #fff;
+}
+
 .output {
-    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .template__wrapper {
-    width: 280px;
-    height: auto;
-    margin: 40px 8px;
+    width: 300px;
+    margin: 40px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.movie__poster {
+.search__movie--poster {
     height: 450px;
     width: auto;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.movie__poster:hover {
+.search__movie--poster:hover {
     transition: all .3s ease;
     opacity: .4;
 }
@@ -265,4 +266,9 @@ header {
     color: #fff;
     border: none;
     border-radius: 4px;
+}
+
+/* CLASSLISTS */
+.hideAll {
+    display: none;
 }

@@ -41,7 +41,7 @@ const handleTopRatedMovies = () => {
 }
 
 
-// handleUpcomingMovies();
+handleUpcomingMovies();
 handleTopRatedMovies();
 searchMovie();
 
