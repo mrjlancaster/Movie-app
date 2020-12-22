@@ -8,10 +8,10 @@ const searchButton = document.querySelector('.search');
 // let slideCounter = 0;
 // const upcomingCardContainerWidth = container[0].clientWidth;
 
-// const API_KEY = process.env.API_KEY;
-const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_KEY;
-const upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + API_KEY;
-const topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + API_KEY;
+const api_key = process.env.API_KEY || API_KEY;
+const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + api_key;
+const upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + api_key;
+const topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key;
 
 // Get data
 const getData = (url, func) => {
