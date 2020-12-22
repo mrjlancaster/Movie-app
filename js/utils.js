@@ -69,12 +69,15 @@ export const displaySearch = (obj) => {
     const upcomingContainer = document.querySelector('.upcoming');
     const topRatedContainer = document.querySelector('.top__rated');
     const output = document.querySelector('.output');
+    const heading = document.querySelector('.search__results--heading');
     const data = [obj];
     const movies = data[0].results;
 
     // clear container
     upcomingContainer.classList.add('hideAll');
     topRatedContainer.classList.add('hideAll');
+
+    heading.innerText = 'Results';
     
     let movie = '';
     movies.forEach(item => {

@@ -4,7 +4,8 @@
   "description": "Movie search. Search for any movie to get their information.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,10 @@
   },
   "homepage": "https://github.com/mrjlancaster/Movie-ui#readme",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "sass": "^1.30.0"
   }
 }
