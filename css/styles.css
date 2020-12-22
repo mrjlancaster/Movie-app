@@ -232,15 +232,15 @@ header {
 }
 
 .template__wrapper {
-    width: 300px;
-    margin: 40px 5px;
+    width: 240px;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .search__movie--poster {
-    height: 450px;
+    height: 300px;
     width: auto;
     border-radius: 4px;
     cursor: pointer;
@@ -253,14 +253,15 @@ header {
 
 .movie__title {
     padding: 10px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.746);
     font-weight: 200;
-    font-size: 13px;
+    font-size: 14px;
     text-align: center;
 }
 
 .more__details {
-    padding: 10px 12px;
+    margin-top: 10px;
+    padding: 8px 10px;
     cursor: pointer;
     background: rgba(252, 7, 7, 0.797);
     color: #fff;
