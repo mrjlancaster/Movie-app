@@ -47,6 +47,38 @@ header {
     font-size: 14px;
 }
 
+/* UPCOMING CAROUSEL */
+.upcoming__carousel {
+    height: 700px;
+    border: 1px solid lightgray;
+}
+
+.upcoming__slide {
+    display: flex;
+}
+
+.one {
+    height: 300px;
+    width: 600px;
+    background-color: aqua;
+}
+.two {
+    height: 300px;
+    width: 600px;
+    background-color: aquamarine;
+}
+.three {
+    height: 300px;
+    width: 600px;
+    background-color: bisque;
+}
+.four {
+    height: 300px;
+    width: 600px;
+    background-color: cadetblue;
+}
+
+
 /* WELCOME SECTION */
 .welcome__section {
 
@@ -134,45 +166,58 @@ header {
 }
 
 /* UPCOMING MOVIES */
-.upcoming,
-.top__rated {
+.upcoming {
     margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    height: 520px;
-    padding: 10px;
+    height: 500px;
+    border: 3px solid white;
 }
 
 .upcoming__movies,
 .top__rated--movies {
     display: flex;
-    overflow: scroll;
 }
 
-.upcoming__heading,
-.top__rated--heading {
-    margin-left: 10px;
-    color: #fff;
-}
-
-.upcoming__card--wrapper,
-.top__rated--wrapper {
+.upcoming__card--wrapper {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    width: 280px;
-    height: auto;
-    margin: 40px 8px;
+    border: 3px solid white;    
 }
 
 .upcoming__poster {
     cursor: pointer;
-    width: auto;
-    height: 450px;
+    width: 300px;
+    height: 490px;
 }
 
 .upcoming__poster:hover {
     transition: all .3s ease;
     opacity: .4;
+}
+
+/* TOP RATED MOVIES */
+.top__rated {
+    margin-top: 100px;
+    height: auto;
+}
+
+.top__rated--wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: auto;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.top__rated--heading {
+    margin-left: 10px;
+    color: #fff;
+}
+
+.top__rated--poster {
+    cursor: pointer;
+    width: 300px;
+    height: 490px;
 }
 
 

@@ -11,11 +11,20 @@ export const displayUpcomingMovies = (obj) => {
         movie +=`
         <div class="upcoming__card--wrapper">
             <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
+            <div class="upcoming__description">
+                <h1 class="upcoming__title">${item.title}</h1>
+                <div>
+                    <p class="upcoming__story">Story</p>
+                    <p class="upcoming__story--description">${item.overview}</p>
+                </div>
+
+            </div>
         </div>`;
     })
 
     // Output results
     upcoming.innerHTML = movie;
+    console.log(movie.length);
 }
 
 // Display Top Rated movies
@@ -27,7 +36,7 @@ export const displayTopRatedMovies = (obj) => {
     movies.forEach(item => {
         movie +=`
         <div class="top__rated--wrapper">
-            <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
+            <img src=${imageBaseURL + item.poster_path} class="top__rated--poster" alt="" />
         </div>`;
     })
 

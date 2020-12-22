@@ -2,6 +2,12 @@ import { displayUpcomingMovies, displayTopRatedMovies, displaySearch } from './u
 
 const searchInput = document.querySelector('.search__input');
 const searchButton = document.querySelector('.search');
+// const previousButton = document.querySelector('.upcoming__previous--button');
+// const nextButton = document.querySelector('.upcoming__next--button');
+
+// let slideCounter = 0;
+// const upcomingCardContainerWidth = container[0].clientWidth;
+
 
 const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_KEY;
 const upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + API_KEY;
@@ -35,7 +41,7 @@ const handleTopRatedMovies = () => {
 }
 
 
-handleUpcomingMovies();
+// handleUpcomingMovies();
 handleTopRatedMovies();
 searchMovie();
 
