@@ -40,7 +40,6 @@ export const displayUpcomingMovies = (obj) => {
 
     // Output results
     upcoming.innerHTML = moviePoster;
-    console.log(movie);
 }
 
 // Display Top Rated movies
@@ -58,8 +57,6 @@ export const displayTopRatedMovies = (obj) => {
 
     // Output results
     topRated.innerHTML = movie;
-
-    console.log(obj);
 }
 
 
