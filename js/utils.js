@@ -1,6 +1,10 @@
 const searchInput = document.querySelector('.search__input');
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 
+// Poster placeholder
+import posterPlaceholder from '../img/poster-unavailable.jpg';
+
+
 
 // HANDLE UPCOMING MOVIES DISPLAY
 export const displayUpcomingMovies = (obj) => {
@@ -78,9 +82,10 @@ export const displaySearch = (obj) => {
     
     let movie = '';
     movies.forEach(item => {
+
         movie +=`
             <div class="template__wrapper">
-                <img src=${imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />
+                <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />
                 <h4 class="movie__title">${item.title}</h4>
                 <button class="more__details">More details</button>
             </div>`;
