@@ -86,7 +86,6 @@ export const displaySearch = (obj) => {
     
     let movie = '';
     movies.forEach(item => {
-
         movie +=`
             <div class="template__wrapper">
                 <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />

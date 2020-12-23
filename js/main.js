@@ -2,11 +2,10 @@ import { displayUpcomingMovies, displayTopRatedMovies, displaySearch } from './u
 
 const searchInput = document.querySelector('.search__input');
 const searchButton = document.querySelector('.search');
-// const previousButton = document.querySelector('.upcoming__previous--button');
-// const nextButton = document.querySelector('.upcoming__next--button');
 
 // let slideCounter = 0;
 // const upcomingCardContainerWidth = container[0].clientWidth;
+
 
 const api_key = process.env.API_KEY;
 const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + api_key;
@@ -18,17 +17,36 @@ const getData = (url, func) => {
     fetch(url)
         .then(response => response.json())
         .then(data => func(data))
+        .catch(error => console.log(error))
 }
+
+//  SEARCH BAR EVENT LISTENERS
+searchInput.addEventListener('keyup', (e) => {
+    if (searchInput.value === '') {
+        false;
+    } else {
+        if (e.keyCode === 13) {
+            searchMovie();
+        }
+    }
+})
+
+searchButton.addEventListener('click', () => {
+    if (searchInput.value === '') {
+        false;
+    } else {
+        searchMovie();
+    }
+});
+
 
 // Handle movie search
 const searchMovie = () => {
-    searchButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        const value = searchInput.value;
-        const newURL = search_url + '&query=' + value;
-        getData(newURL, displaySearch);
-    })
+    const value = searchInput.value;
+    const newURL = search_url + '&query=' + value;
+    getData(newURL, displaySearch);
 }
+
 
 // Handle upcoming movies
 const handleUpcomingMovies = () => {
@@ -43,6 +61,7 @@ const handleTopRatedMovies = () => {
 
 handleUpcomingMovies();
 handleTopRatedMovies();
-searchMovie();
+
+
 
 
