@@ -154,7 +154,7 @@ header {
 }
 
 .template__wrapper {
-  width: 240px;
+  width: 280px;
   margin: 40px 3px;
   display: flex;
   flex-direction: column;
@@ -162,8 +162,8 @@ header {
 }
 
 .search__movie--poster {
-  height: 400px;
-  width: auto;
+  height: 420px;
+  width: 100%;
   border-radius: 4px;
   cursor: pointer;
 }

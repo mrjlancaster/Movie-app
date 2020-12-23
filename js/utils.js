@@ -5,7 +5,6 @@ const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 import posterPlaceholder from '../img/poster-unavailable.jpg';
 
 
-
 // HANDLE UPCOMING MOVIES DISPLAY
 export const displayUpcomingMovies = (obj) => {
     const upcoming = document.querySelector('.upcoming__movies');

@@ -233,11 +233,11 @@ var searchButton = document.querySelector('.search'); // const previousButton = 
 // const nextButton = document.querySelector('.upcoming__next--button');
 // let slideCounter = 0;
 // const upcomingCardContainerWidth = container[0].clientWidth;
-// const api_key = process.env.API_KEY;
 
-var search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + "e52593a87eedaa85c0101c33dea06770";
-var upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + "e52593a87eedaa85c0101c33dea06770";
-var topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + "e52593a87eedaa85c0101c33dea06770"; // Get data
+var api_key = "e52593a87eedaa85c0101c33dea06770";
+var search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + api_key;
+var upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + api_key;
+var topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key; // Get data
 
 var getData = function getData(url, func) {
   fetch(url).then(function (response) {
@@ -298,7 +298,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63652" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55590" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
