@@ -1,0 +1,29 @@
+/* TOP RATED MOVIES */
+.top__rated {
+    margin-top: 100px;
+    height: auto;
+}
+
+.top__rated--movies {
+    display: flex;
+}
+
+.top__rated--wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: auto;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.top__rated--heading {
+    margin-left: 10px;
+    color: #fff;
+}
+
+.top__rated--poster {
+    cursor: pointer;
+    width: 300px;
+    height: 490px;
+}

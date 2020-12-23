@@ -1,0 +1,46 @@
+/* UPCOMING MOVIES */
+.upcoming {
+    margin-top: 100px;
+    /* border: 3px solid white; */
+    height: auto;
+}
+
+/* .upcoming__movies {
+    display: flex;
+    height: 500px;
+} */
+
+.upcoming__card--wrapper {
+    display: flex;
+    margin-right: 20px;
+}
+
+.upcoming__poster {
+    cursor: pointer;
+    width: 350px;
+    height: 500px;
+}
+
+.upcoming__title {
+    font-size: 60px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.upcoming__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.upcoming__text--container {
+    width: 80%;
+    color: #fff;
+    opacity: .7;
+}
+
+/* .upcoming__poster:hover {
+    transition: all .3s ease;
+    opacity: .4;
+} */

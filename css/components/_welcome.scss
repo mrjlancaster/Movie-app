@@ -1,0 +1,43 @@
+/* WELCOME SECTION */
+.welcome__section {
+    background-color: royalblue;
+    height: 700px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    color: #fff;
+    margin-top: 80px;
+}
+
+.welcome__title--container {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.welcome__title {
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+
+.welcome__poster--container {
+    height: 100%;
+    width: 33%;
+}
+
+.welcome__poster {
+    height: 600px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.description__container {
+    width: 33%;
+}
+
+.welcome__story--description {
+    margin-top: 20px;
+}
