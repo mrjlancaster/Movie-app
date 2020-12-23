@@ -72,12 +72,17 @@ export const displaySearch = (obj) => {
     const heading = document.querySelector('.search__results--heading');
     const data = [obj];
     const movies = data[0].results;
+    const count = obj.total_results;
 
     // clear container
     upcomingContainer.classList.add('hideAll');
     topRatedContainer.classList.add('hideAll');
 
-    heading.innerText = 'Results';
+    if (count === 0) {
+        heading.innerText = 'No results found.';
+    } else {
+        heading.innerText = `${count} results found`;
+    }
     
     let movie = '';
     movies.forEach(item => {
