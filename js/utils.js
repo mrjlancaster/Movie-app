@@ -91,6 +91,7 @@ export const displaySearch = (obj) => {
             <div class="template__wrapper">
                 <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />
                 <h4 class="movie__title">${item.title}</h4>
+                <p class="movie__title">${item.title}</p>
                 <button class="more__details">More details</button>
             </div>`;
     })
@@ -100,6 +101,8 @@ export const displaySearch = (obj) => {
 
     // Clear input field
     searchInput.value = '';
+
+    console.log(obj);
 }
 
 
