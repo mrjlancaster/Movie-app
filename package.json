@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/mrjlancaster/Movie-ui#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "parcel-bundler": "^1.12.4"
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.12.4",
     "sass": "^1.30.0"
   }
 }
