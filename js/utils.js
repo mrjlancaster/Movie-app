@@ -2,7 +2,7 @@ const searchInput = document.querySelector('.search__input');
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 
 // Poster placeholder
-import posterPlaceholder from '../img/poster-unavailable.jpg';
+import posterPlaceholder from '../img/poster_unavailable.jpg';
 
 
 // HANDLE UPCOMING MOVIES DISPLAY
