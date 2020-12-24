@@ -70,9 +70,9 @@ export const displaySearch = (obj) => {
     const topRatedContainer = document.querySelector('.top__rated');
     const output = document.querySelector('.output');
     const heading = document.querySelector('.search__results--heading');
-    const data = [obj];
-    const movies = data[0].results;
+    const result = obj.results;
     const count = obj.total_results;
+
 
     // clear container
     upcomingContainer.classList.add('hideAll');
@@ -85,23 +85,31 @@ export const displaySearch = (obj) => {
     }
     
     let movie = '';
-    movies.forEach(item => {
-        movie +=`
+    let tvShows = '';
+
+    result.forEach(item => {
+        if (item.media_type === 'movie') {
+            movie +=`
             <div class="template__wrapper">
                 <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />
-                <h4 class="movie__title">${item.title}</h4>
-                <p class="movie__title">${item.title}</p>
+                <h4 class="search__movie--title">${item.title}</h4>
                 <button class="more__details">More details</button>
             </div>`;
+        } else if (item.media_type === 'tv') {
+            tvShows +=`
+            <div class="template__wrapper">
+                <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} class="search__movie--poster" alt="" />
+                <h4 class="search__movie--title">${item.name}</h4>
+                <button class="more__details">More details</button>
+            </div>`;
+        }
     })
 
     // Output results
-    output.innerHTML = movie;
+    output.innerHTML = movie + tvShows;
 
     // Clear input field
     searchInput.value = '';
-
-    console.log(obj);
 }
 
 

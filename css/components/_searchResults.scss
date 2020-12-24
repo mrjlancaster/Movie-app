@@ -27,10 +27,11 @@
 }
 
 .search__movie--poster {
-    height: 420px;
-    width: 100%;
-    border-radius: 4px;
+    box-shadow: 5px 10px 10px;
+    height: 390px;
+    width: 90%;
     cursor: pointer;
+    border-radius: 2px;
 }
 
 .search__movie--poster:hover {
@@ -38,12 +39,12 @@
     opacity: .4;
 }
 
-.movie__title {
+.search__movie--title {
     padding: 10px;
-    color: rgba(255, 255, 255, 0.746);
-    font-weight: 200;
+    color: rgba(255, 255, 255, 0.877);
     font-size: 14px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .more__details {

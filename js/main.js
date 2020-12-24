@@ -6,9 +6,8 @@ const searchButton = document.querySelector('.search');
 // let slideCounter = 0;
 // const upcomingCardContainerWidth = container[0].clientWidth;
 
-
 const api_key = process.env.API_KEY;
-const search_url = 'https://api.themoviedb.org/3/search/movie?api_key=' + api_key;
+const multiSearch_url = 'https://api.themoviedb.org/3/search/multi?api_key=' + api_key + '&include_adult=false';
 const upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + api_key;
 const topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key;
 
@@ -43,8 +42,10 @@ searchButton.addEventListener('click', () => {
 // Handle movie search
 const searchMovie = () => {
     const value = searchInput.value;
-    const newURL = search_url + '&query=' + value;
-    getData(newURL, displaySearch);
+    const movies = search_url + '&query=' + value;
+    const multipleSearch = multiSearch_url + '&query=' + value;
+    // getData(movies, displaySearch);
+    getData(multipleSearch, displaySearch);
 }
 
 
