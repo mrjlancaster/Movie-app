@@ -42,9 +42,7 @@ searchButton.addEventListener('click', () => {
 // Handle movie search
 const searchMovie = () => {
     const value = searchInput.value;
-    const movies = search_url + '&query=' + value;
     const multipleSearch = multiSearch_url + '&query=' + value;
-    // getData(movies, displaySearch);
     getData(multipleSearch, displaySearch);
 }
 
