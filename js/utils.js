@@ -110,6 +110,8 @@ export const displaySearch = (obj) => {
 
     // Clear input field
     searchInput.value = '';
+
+    console.log(obj);
 }
 
 
