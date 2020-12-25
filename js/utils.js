@@ -1,5 +1,6 @@
 const searchInput = document.querySelector('.search__input');
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+const backdrop_image = 'https://image.tmdb.org/t/p/original/'
 
 // Poster placeholder
 import posterPlaceholder from '../img/poster_unavailable.jpg';
@@ -8,7 +9,7 @@ import posterPlaceholder from '../img/poster_unavailable.jpg';
 // HANDLE UPCOMING MOVIES DISPLAY
 export const displayUpcomingMovies = (obj) => {
     const upcoming = document.querySelector('.upcoming__movies');
-    const movie = obj.results[0];
+    const movie = obj.results[2];
 
     let moviePoster = `
         <div class="upcoming__card--wrapper">
@@ -17,10 +18,6 @@ export const displayUpcomingMovies = (obj) => {
             </div>
             <div class="upcoming__description">
                 <h1 class="upcoming__title">${movie.title}</h1>
-                <div class="upcoming__text--container">
-                    <p class="upcoming__story">Story</p>
-                    <p class="upcoming__story--description">${movie.overview}</p>
-                </div>
             </div>
         </div>`;
     
@@ -63,7 +60,6 @@ export const displayTopRatedMovies = (obj) => {
 }
 
 
-
 // HANDLE SEARCH DISPLAY
 export const displaySearch = (obj) => {
     const upcomingContainer = document.querySelector('.upcoming');
@@ -72,7 +68,6 @@ export const displaySearch = (obj) => {
     const heading = document.querySelector('.search__results--heading');
     const result = obj.results;
     const count = obj.total_results;
-
 
     // clear container
     upcomingContainer.classList.add('hideAll');
@@ -110,35 +105,4 @@ export const displaySearch = (obj) => {
 
     // Clear input field
     searchInput.value = '';
-
-    console.log(obj);
 }
-
-
-// // test handle one
-// export const displayOne = (obj) => {
-//     const output = document.querySelector('.welcome__section');
-//     const data = [obj];
-//     const movies = data[0].results[0];
-//     const title = movies.title;
-//     const poster = movies.poster_path;
-//     const story = movies.overview;
-
-//     let movie =
-//             `<div class="welcome__title--container">
-//             <div>
-//                 <h1 class="welcome__title">${title}</h1>
-//                 <p class="welcome__title--text">20 december <span>|</span> Fantasy, Drama</p>
-//             </div>
-//             </div>
-//             <div class="welcome__poster--container">
-//             <img class="welcome__poster" src=${imageBaseURL + poster} alt="">
-//             </div>
-//             <div class="description__container">
-//             <h3 class="welcome__story--title">The Story</h3>
-//             <p class="welcome__story--description">${story}</p>
-//             </div>`;
-
-//     // Output results
-//     output.innerHTML = movie;
-// }
