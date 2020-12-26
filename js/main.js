@@ -59,7 +59,3 @@ const handleTopRatedMovies = () => {
 
 handleUpcomingMovies();
 handleTopRatedMovies();
-
-
-
-
