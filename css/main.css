@@ -44,6 +44,14 @@ header {
   text-decoration: none;
 }
 
+.logo__movie {
+  color: #1b43b3;
+}
+
+.logo__app {
+  color: rgba(255, 0, 0, 0.845);
+}
+
 .nav__list {
   height: 100%;
   display: -webkit-box;
@@ -306,6 +314,7 @@ header {
   font-weight: bold;
   color: #fff;
   text-align: center;
+  margin-top: 100px;
 }
 
 .upcoming__overview {
@@ -316,11 +325,13 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 100px;
+  margin-top: 140px;
 }
 
 .overview__title {
-  color: #cacaca;
+  color: #fff;
+  font-weight: 200;
+  line-height: 1.4em;
   width: 100px;
   height: 100px;
 }
@@ -328,6 +339,31 @@ header {
 .overview__description {
   color: #cacaca;
   width: 500px;
+  line-height: 1.4em;
+}
+
+.upcoming__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none;
+  color: red;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.upcoming__button i {
+  font-size: 20px;
+  margin-left: 10px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.upcoming__button:hover i {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
 }
 
 /* TOP RATED MOVIES */

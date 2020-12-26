@@ -2,9 +2,10 @@ const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 
 export const displayUpcomingMovies = (obj) => {
     const upcoming = document.querySelector('.upcoming__movies');
-    const movie = obj.results[12];
+    const movie = obj.results[10];
     const poster = imageBaseURL + movie.poster_path;
     const title = movie.title;
+    const overview = movie.overview;
 
 
     let moviePoster = `
@@ -14,8 +15,8 @@ export const displayUpcomingMovies = (obj) => {
                 <div class="upcoming__overview">
                     <h3 class="overview__title">The <br />Story</h3>
                     <div>
-                        <p class="overview__description">${movie.overview}</p>
-                        <button type="button">See more</button>
+                        <p class="overview__description">${overview}</p>
+                        <button type="button" class="upcoming__button">Read more <i class="fas fa-long-arrow-alt-right"></i></button>
                     </div>
                 </div>
             </div>

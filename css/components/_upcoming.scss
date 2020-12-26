@@ -42,16 +42,19 @@
     font-weight: bold;
     color: #fff;
     text-align: center;
+    margin-top: 100px;
 }
 
 .upcoming__overview {
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 140px;
 }
 
 .overview__title {
-    color: #cacaca;
+    color: #fff;
+    font-weight: 200;
+    line-height: 1.4em;
     width: 100px;
     height: 100px;
 }
@@ -59,4 +62,26 @@
 .overview__description {
     color: #cacaca;
     width: 500px;
+    line-height: 1.4em;
+}
+
+// BUTTON styles
+.upcoming__button {
+    display: flex;
+    background: none;
+    color: red;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.upcoming__button i {
+    font-size: 20px;
+    margin-left: 10px;
+    transition: all 300ms ease;
+}
+
+.upcoming__button:hover i {
+    transform: translateX(10px);
 }
