@@ -1,4 +1,6 @@
-import { displayUpcomingMovies, displayTopRatedMovies, displaySearch } from './utils.js';
+import { displaySearch } from './movieSearch.js';
+import { displayUpcomingMovies } from './upcomingMovies.js';
+import { displayTopRatedMovies } from './topRatedMovies.js';
 
 const searchInput = document.querySelector('.search__input');
 const searchButton = document.querySelector('.search');

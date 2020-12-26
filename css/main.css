@@ -261,6 +261,8 @@ header {
 .upcoming {
   margin-top: 60px;
   height: auto;
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(10%, rgba(117, 70, 184, 0.461)), color-stop(#ffff), to(transparent));
+  background-image: linear-gradient(to left, rgba(117, 70, 184, 0.461) 10%, #ffff, transparent);
 }
 
 .upcoming__card--wrapper {
