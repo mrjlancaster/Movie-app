@@ -10,19 +10,21 @@
 }
 
 .upcoming__poster--container {
-    height: 700px;
+    height: 680px;
     width: 50%;
     background-repeat: no-repeat;
+    // background-size: cover;
     background-position: center;
     background-size: contain;
     display: flex;
 }
 
 .upcoming__poster--container::after {
+    display: flex;
     content: "";
     background-color: #111518;
     height: 100%;
-    width: 55%;
+    width: 50%;
     background: linear-gradient(
         90deg,
         rgb(17, 21, 24) 0%,
@@ -39,10 +41,22 @@
 
 .upcoming__title {
     font-size: 65px;
-    font-weight: bold;
+    font-weight: 200;
     color: #fff;
     text-align: center;
     margin-top: 100px;
+}
+
+.upcoming__genre {
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: .4em;
+}
+
+.genre__separator {
+    color: red;
 }
 
 .upcoming__overview {
@@ -60,9 +74,10 @@
 }
 
 .overview__description {
-    color: #cacaca;
+    color: #fff;
     width: 500px;
-    line-height: 1.4em;
+    line-height: 1.6em;
+    font-family: 'Lato', sans-serif;
 }
 
 // BUTTON styles

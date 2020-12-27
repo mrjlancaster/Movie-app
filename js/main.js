@@ -37,14 +37,12 @@ searchButton.addEventListener('click', () => {
     }
 });
 
-
 // Handle movie search
 const searchMovie = () => {
     const value = searchInput.value;
     const multipleSearch = multiSearch_url + '&query=' + value;
     getData(multipleSearch, displaySearch);
 }
-
 
 // Handle upcoming movies
 const handleUpcomingMovies = () => {
@@ -55,7 +53,6 @@ const handleUpcomingMovies = () => {
 const handleTopRatedMovies = () => {
     getData(topRated_URL, displayTopRatedMovies);
 }
-
 
 handleUpcomingMovies();
 handleTopRatedMovies();
