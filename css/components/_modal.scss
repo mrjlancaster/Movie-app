@@ -1,0 +1,33 @@
+.modal {
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.modal__wrapper {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 80%;
+    background-color: #cacaca;
+    border-radius: 10px;
+}
+
+.close__modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    i {
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+// classlist
+.isShown {
+    display: flex;
+}

@@ -54,5 +54,27 @@ const handleTopRatedMovies = () => {
     getData(topRated_URL, displayTopRatedMovies);
 }
 
+// Display movie info on click
+const handleModal = () => {
+    const modal = document.querySelector('.modal');
+    const closeModal = document.querySelector('.close__modal i');
+
+    closeModal.addEventListener('click', () => {
+        if (modal) {
+            modal.classList.remove('isShown');
+        }
+    })
+
+    document.addEventListener('click', (e) => {
+        const target = e.target;
+        
+        if (target.tagName.toLowerCase() === 'img') {
+            console.log(target);
+            modal.classList.add('isShown');
+        }
+    })
+}
+
+handleModal();
 handleUpcomingMovies();
 handleTopRatedMovies();
