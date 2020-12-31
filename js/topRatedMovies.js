@@ -14,7 +14,7 @@ export const displayTopRatedMovies = (obj) => {
     movies.forEach(item => {
         movie +=`
         <div class="top__rated--wrapper">
-            <img src=${imageBaseURL + item.poster_path} class="top__rated--poster" alt="" />
+            <img src=${imageBaseURL + item.poster_path} data-movie-id=${item.id} class="top__rated--poster" alt="" />
             <p class="top__rated--title">${item.title}</p>
         </div>`;
     })

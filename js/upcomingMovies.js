@@ -13,9 +13,6 @@ export const displayUpcomingMovies = (obj) => {
         .then(response => response.json())
         .then(movieById => {
             const genres = movieById.genres; // returns an array
-            const homepage = movieById.homepage; // returns string
-            const runtime = movieById.runtime;
-
 
             let moviePoster = `
                 <div class="upcoming__card--wrapper">
