@@ -33,14 +33,12 @@ export const displaySearch = (obj) => {
             <div class="template__wrapper">
                 <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} data-movie-id=${item.id} class="search__movie--poster" alt="" />
                 <h4 class="search__movie--title">${item.title}</h4>
-                <button class="more__details">More details</button>
             </div>`;
         } else if (item.media_type === 'tv') {
             tvShows +=`
             <div class="template__wrapper">
                 <img src=${item.poster_path === null ? posterPlaceholder : imageBaseURL + item.poster_path} data-movie-id=${item.id} class="search__movie--poster" alt="" />
                 <h4 class="search__movie--title">${item.name}</h4>
-                <button class="more__details">More details</button>
             </div>`;
         }
     })
