@@ -339,7 +339,7 @@ header {
 
 .modal {
   position: fixed;
-  display: none;
+  display: flex;
   height: 100%;
   width: 100%;
   z-index: 10;
@@ -355,6 +355,8 @@ header {
   border: 2px solid lightgray;
   border-radius: 10px;
   display: flex;
+  justify-content: center;
+  color: #fff;
 }
 
 .close__modal {
@@ -365,12 +367,36 @@ header {
 .close__modal i {
   font-size: 20px;
   cursor: pointer;
-  color: #fff;
 }
 
-.modal__title,
-.modal__overview {
-  color: #fff;
+.modal__poster--container {
+  width: 50%;
+}
+
+.modal__content {
+  width: 50%;
+}
+
+.modal__item {
+  display: inline-flex;
+}
+
+.modal__button {
+  position: relative;
+  color: red;
+  text-decoration: none;
+  font-size: 18px;
+}
+.modal__button i {
+  position: relative;
+  top: 3px;
+  font-size: 20px;
+  margin-left: 8px;
+  transition: all 300ms ease;
+}
+
+.modal__button:hover i {
+  transform: translateX(5px);
 }
 
 .isShown {

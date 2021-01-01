@@ -176,6 +176,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.findById = void 0;
+var imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 
 var findById = function findById(id) {
   fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
