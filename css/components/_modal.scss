@@ -5,7 +5,6 @@
     width: 100%;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.7);
-
 }
 
 .modal__wrapper {
@@ -13,8 +12,10 @@
     margin: auto;
     height: 80vh;
     width: 80%;
-    background-color: #cacaca;
+    background-color: #000;
+    border: 2px solid lightgray;
     border-radius: 10px;
+    display: flex;
 }
 
 .close__modal {
@@ -24,7 +25,15 @@
     i {
         font-size: 20px;
         cursor: pointer;
+        color: #fff;
     }
+}
+
+// CONTENT
+
+.modal__title,
+.modal__overview {
+    color: #fff;
 }
 
 // classlist

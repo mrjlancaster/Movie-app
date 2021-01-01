@@ -169,7 +169,26 @@ var displaySearch = function displaySearch(obj) {
 };
 
 exports.displaySearch = displaySearch;
-},{"../img/poster_unavailable.jpg":"img/poster_unavailable.jpg"}],"js/upcomingMovies.js":[function(require,module,exports) {
+},{"../img/poster_unavailable.jpg":"img/poster_unavailable.jpg"}],"js/findById.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.findById = void 0;
+
+var findById = function findById(id) {
+  fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    return console.log(data);
+  }).catch(function (error) {
+    return error;
+  });
+};
+
+exports.findById = findById;
+},{}],"js/upcomingMovies.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -243,43 +262,20 @@ var displayTopRatedMovies = function displayTopRatedMovies(obj) {
 };
 
 exports.displayTopRatedMovies = displayTopRatedMovies;
-},{}],"js/findById.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.findById = void 0;
-
-var findById = function findById(id) {
-  fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    return console.log(data);
-  }).catch(function (error) {
-    return error;
-  });
-};
-
-exports.findById = findById;
 },{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 var _movieSearch = require("./movieSearch.js");
 
+var _findById = require("./findById.js");
+
 var _upcomingMovies = require("./upcomingMovies.js");
 
 var _topRatedMovies = require("./topRatedMovies.js");
 
-var _findById = require("./findById.js");
-
-// import { findById } from './findById.js';
 var searchInput = document.querySelector('.search__input');
 var searchButton = document.querySelector('.search');
-var api_key = "e52593a87eedaa85c0101c33dea06770"; // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-
+var api_key = "e52593a87eedaa85c0101c33dea06770";
 var multiSearch_url = 'https://api.themoviedb.org/3/search/multi?api_key=' + api_key + '&include_adult=false';
 var upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + api_key;
 var topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key; // Get data
@@ -328,10 +324,7 @@ var handleUpcomingMovies = function handleUpcomingMovies() {
 
 var handleTopRatedMovies = function handleTopRatedMovies() {
   getData(topRated_URL, _topRatedMovies.displayTopRatedMovies);
-}; // // Handle find one
-// const findOne = (id) => {
-// }
-// Display movie info on click
+}; // Display movie info on click
 
 
 var handleModal = function handleModal() {
@@ -356,7 +349,7 @@ var handleModal = function handleModal() {
 handleModal();
 handleUpcomingMovies();
 handleTopRatedMovies();
-},{"./movieSearch.js":"js/movieSearch.js","./upcomingMovies.js":"js/upcomingMovies.js","./topRatedMovies.js":"js/topRatedMovies.js","./findById.js":"js/findById.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./movieSearch.js":"js/movieSearch.js","./findById.js":"js/findById.js","./upcomingMovies.js":"js/upcomingMovies.js","./topRatedMovies.js":"js/topRatedMovies.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -384,7 +377,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51683" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60375" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
