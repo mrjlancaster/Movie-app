@@ -182,7 +182,11 @@ var findById = function findById(id) {
   fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
     return response.json();
   }).then(function (data) {
-    return console.log(data);
+    var cardWrapper = document.querySelector('.modal__card');
+    console.log(data);
+    var card = "\n                    <div class=\"modal__poster--container\">\n                        <img src=".concat(imageBaseURL + data.poster_path, " alt=\"Poster\" class=\"modal__poster\">\n                    </div>\n                    <div class=\"modal__content\">\n                        <div class=\"modal__title--wrapper\">\n                            <p class=\"modal__rate\">").concat(data.vote_average, " / 10</p>\n                            <h1 class=\"modal__title\">").concat(data.title, "</h1>\n                            <ul class=\"modal__list\">\n                                <li class=\"modal__item\">Action</li>\n                                <li class=\"modal__item\">Comedy</li>\n                                <li class=\"modal__item\">Thriller</li>\n                            </ul>\n                            <p class=\"modal__releaseDate\">Release date: december 2020</p>\n                            <p clas=\"modal__runtime\">Duration: ").concat(data.runtime, " minutes</p>\n                        </div>\n                        <div class=\"modal__synopsis--wrapper\">\n                            <h3 class=\"modal__overview--heading\">Synopsis</h3>\n                            <p class=\"modal__overview\">").concat(data.overview, "</p>\n                            <a href=\"").concat(data.homepage, "\" target=\"_blank\" class=\"modal__button\">Homepage <i class=\"fas fa-long-arrow-alt-right\"></i></a>\n                        </div>\n                    </div>"); // cardWrapper.insertAdjacentHTML('beforeend', card);
+
+    cardWrapper.innerHTML = card;
   }).catch(function (error) {
     return error;
   });
@@ -330,11 +334,11 @@ var handleTopRatedMovies = function handleTopRatedMovies() {
 
 var handleModal = function handleModal() {
   var modal = document.querySelector('.modal');
+  var modalCard = document.querySelector('.modal__card');
   var closeModal = document.querySelector('.close__modal i');
   closeModal.addEventListener('click', function () {
-    if (modal) {
-      modal.classList.remove('isShown');
-    }
+    modalCard.innerHTML = '';
+    modal.classList.remove('isShown');
   });
   document.addEventListener('click', function (e) {
     var target = e.target;
@@ -378,7 +382,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60375" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54187" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

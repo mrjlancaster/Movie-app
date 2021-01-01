@@ -63,12 +63,12 @@ const handleTopRatedMovies = () => {
 // Display movie info on click
 const handleModal = () => {
     const modal = document.querySelector('.modal');
+    const modalCard = document.querySelector('.modal__card');
     const closeModal = document.querySelector('.close__modal i');
 
     closeModal.addEventListener('click', () => {
-        if (modal) {
-            modal.classList.remove('isShown');
-        }
+        modalCard.innerHTML = '';
+        modal.classList.remove('isShown');
     })
 
     document.addEventListener('click', (e) => {
