@@ -1,19 +1,12 @@
 import { displaySearch } from './movieSearch.js';
-// import { findById } from './findById.js';
+import { findById } from './findById.js';
 import { displayUpcomingMovies } from './upcomingMovies.js';
 import { displayTopRatedMovies } from './topRatedMovies.js';
-import { findById } from './findById.js';
 
 const searchInput = document.querySelector('.search__input');
 const searchButton = document.querySelector('.search');
 
-const api_key = process.env.API_KEY;
-
-    // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-
-    
+const api_key = process.env.API_KEY;    
 const multiSearch_url = 'https://api.themoviedb.org/3/search/multi?api_key=' + api_key + '&include_adult=false';
 const upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + api_key;
 const topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key;
@@ -66,11 +59,6 @@ const handleUpcomingMovies = () => {
 const handleTopRatedMovies = () => {
     getData(topRated_URL, displayTopRatedMovies);
 }
-
-// // Handle find one
-// const findOne = (id) => {
-
-// }
 
 // Display movie info on click
 const handleModal = () => {
