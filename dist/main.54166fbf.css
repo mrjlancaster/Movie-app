@@ -357,6 +357,7 @@ header {
   display: flex;
   justify-content: center;
   color: #fff;
+  padding: 20px;
 }
 
 .close__modal {
@@ -375,15 +376,46 @@ header {
 
 .modal__content {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal__content p,
+.modal__content li {
+  color: #cacaca;
+}
+
+.modal__title--wrapper {
+  position: relative;
+  bottom: 100px;
+  border: 1px solid gray;
+}
+
+.modal__list {
+  margin-bottom: 20px;
 }
 
 .modal__item {
   display: inline-flex;
 }
 
+.modal__overview {
+  color: #cacaca;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  width: 500px;
+  line-height: 1.6em;
+  font-family: "Lato", sans-serif;
+}
+
 .modal__button {
   position: relative;
-  color: red;
+  top: 35px;
+  background-color: red;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px;
   text-decoration: none;
   font-size: 18px;
 }
