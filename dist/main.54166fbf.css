@@ -351,10 +351,10 @@ header {
   margin: auto;
   height: 80vh;
   width: 80%;
-  border: 1px solid lightgray;
+  border: 1px solid rgba(211, 211, 211, 0.198);
   border-radius: 8px;
   color: #fff;
-  background-color: #000;
+  background-color: #0e0e0e;
 }
 
 .modal__card {
@@ -447,6 +447,10 @@ header {
 
 .isShown {
   display: flex;
+}
+
+.hideButton {
+  display: none;
 }
 
 /*# sourceMappingURL=/main.54166fbf.css.map */

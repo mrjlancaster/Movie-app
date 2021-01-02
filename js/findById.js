@@ -6,6 +6,12 @@ export const findById = (id) => {
         .then(data => {
             const cardWrapper = document.querySelector('.modal__card');
             console.log(data);
+            const genres = data.genres;
+
+            let genreList = '';
+            genres.forEach(item => {
+                genreList += `<li class="modal__item">${item.name}</li>`
+            })
 
            let card = `
                     <div class="modal__poster--container">
@@ -15,11 +21,7 @@ export const findById = (id) => {
                         <div class="modal__title--wrapper">
                             <p class="modal__rate">${data.vote_average} / 10</p>
                             <h1 class="modal__title">${data.title}</h1>
-                            <ul class="modal__list">
-                                <li class="modal__item">Action</li>
-                                <li class="modal__item">Comedy</li>
-                                <li class="modal__item">Thriller</li>
-                            </ul>
+                            <ul class="modal__list">${genreList}</ul>
                             <p class="modal__releaseDate">Release date: december 2020</p>
                             <p clas="modal__runtime">Duration: ${data.runtime} minutes</p>
                         </div>
@@ -29,9 +31,7 @@ export const findById = (id) => {
                             <a href="${data.homepage}" target="_blank" class="modal__button">Homepage <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>`;
-
-                
-            // cardWrapper.insertAdjacentHTML('beforeend', card);
+                    
             cardWrapper.innerHTML = card;
         })
         .catch(error => error)
