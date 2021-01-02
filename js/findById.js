@@ -7,8 +7,8 @@ export const findById = (id) => {
             const cardWrapper = document.querySelector('.modal__card');
             console.log(data);
             const genres = data.genres;
-
             let genreList = '';
+            const releaseDate = data.release_date.split('-');
             genres.forEach(item => {
                 genreList += `<li class="modal__item">${item.name}</li>`
             });
@@ -22,7 +22,7 @@ export const findById = (id) => {
                             <p class="modal__rate"><span class="modal__rate--sizeup"><i class="fas fa-star"></i> ${data.vote_average}</span> / 10</p>
                             <h1 class="modal__title">${data.title}</h1>
                             <ul class="modal__list">${genreList}</ul>
-                            <p class="modal__releaseDate">Release date: ${data.release_date}</p>
+                            <p class="modal__releaseDate">Release date: ${releaseDate[1]}, ${releaseDate[2]}, ${releaseDate[0]}</p>
                             <p clas="modal__runtime">Duration: ${data.runtime}min</p>
                         </div>
                         <div class="modal__synopsis--wrapper">
