@@ -64,7 +64,7 @@ const handleTopRatedMovies = () => {
 const handleModal = () => {
     const modal = document.querySelector('.modal');
     const modalCard = document.querySelector('.modal__card');
-    const closeModal = document.querySelector('.close__modal i');
+    const closeModal = document.querySelector('.close__modal');
 
     closeModal.addEventListener('click', () => {
         modalCard.innerHTML = '';

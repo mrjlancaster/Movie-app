@@ -10,9 +10,10 @@
 .modal__container {
     position: relative;
     margin: auto;
-    height: 80vh;
+    height: 90vh;
     width: 80%;
     border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.062);
     color: #fff;
     // background-color: rgb(10, 10, 10);
     background-color: #000;
@@ -27,13 +28,12 @@
 
 .close__modal {
     position: absolute;
-    top: 10px;
+    top: 8px;
     right: 15px;
     z-index: 10;
-    i {
-        font-size: 20px;
-        cursor: pointer;
-    }
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 // POSTER
@@ -48,7 +48,8 @@
     margin-right: 70px;
     width: auto;
     height: 95%;
-    border-radius: 5px;
+    border-radius: 2px;
+    border: 1px solid rgba(211, 211, 211, 0.11);
 }
 
 // CONTENT

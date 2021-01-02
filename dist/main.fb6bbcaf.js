@@ -177,6 +177,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.findById = void 0;
 var imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+var month = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 var findById = function findById(id) {
   fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
@@ -185,8 +186,8 @@ var findById = function findById(id) {
     var cardWrapper = document.querySelector('.modal__card');
     console.log(data);
     var genres = data.genres;
-    var genreList = '';
     var releaseDate = data.release_date.split('-');
+    var genreList = '';
     genres.forEach(function (item) {
       genreList += "<li class=\"modal__item\">".concat(item.name, "</li>");
     });
@@ -340,7 +341,7 @@ var handleTopRatedMovies = function handleTopRatedMovies() {
 var handleModal = function handleModal() {
   var modal = document.querySelector('.modal');
   var modalCard = document.querySelector('.modal__card');
-  var closeModal = document.querySelector('.close__modal i');
+  var closeModal = document.querySelector('.close__modal');
   closeModal.addEventListener('click', function () {
     modalCard.innerHTML = '';
     modal.classList.remove('isShown');
@@ -387,7 +388,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51832" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55113" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

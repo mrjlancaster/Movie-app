@@ -1,4 +1,5 @@
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+const month = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 export const findById = (id) => {
     fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + process.env.API_KEY + '&language=en-US')
@@ -7,8 +8,9 @@ export const findById = (id) => {
             const cardWrapper = document.querySelector('.modal__card');
             console.log(data);
             const genres = data.genres;
-            let genreList = '';
             const releaseDate = data.release_date.split('-');
+
+            let genreList = '';
             genres.forEach(item => {
                 genreList += `<li class="modal__item">${item.name}</li>`
             });
