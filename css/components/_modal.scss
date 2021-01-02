@@ -4,7 +4,7 @@
     height: 100%;
     width: 100%;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.529);
 }
 
 .modal__container {
@@ -12,12 +12,10 @@
     margin: auto;
     height: 80vh;
     width: 80%;
-    border: 1px solid rgba(211, 211, 211, 0.198);
-    border-radius: 8px;
+    border-radius: 5px;
     color: #fff;
-    background-color: rgb(14, 14, 14);
-    // background-color: #111518;
-
+    // background-color: rgb(10, 10, 10);
+    background-color: #000;
 }
 
 .modal__card {
@@ -49,8 +47,8 @@
 .modal__poster {
     margin-right: 100px;
     width: auto;
-    height: 90%;
-    border-radius: 4px;
+    height: 95%;
+    border-radius: 5px;
 }
 
 // CONTENT
@@ -71,14 +69,36 @@
 .modal__title--wrapper {
     position: relative;
     bottom: 70px;
+    line-height: 1.6em;
+}
+
+.modal__title {
+    padding: 5px 0;
+    line-height: 1em;
+}
+
+.modal__rate {
+    font-size: 12px;
+    i {
+        color: #F5C518;
+    }
+}
+
+.modal__rate--sizeup {
+    font-size: 20px;
 }
 
 .modal__list {
-    margin-bottom: 20px;
+    margin: 5px 0 10px 0;
 }
 
 .modal__item {
     display: inline-flex;
+    margin-right: 20px;
+    background-color: rgba(255, 0, 0, 0.76);
+    border-radius: 10px;
+    padding: 0 10px;
+    font-weight: bold;
 }
 
 .modal__overview {
@@ -94,12 +114,13 @@
 .modal__button {
     position: relative;
     top: 35px;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.76);
     color: #fff;
     border-radius: 4px;
     padding: 10px 12px;
     text-decoration: none;
     font-size: 16px;
+    font-weight: bold;
     i {
         position: relative;
         top: 3px;

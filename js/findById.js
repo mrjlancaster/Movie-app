@@ -11,7 +11,7 @@ export const findById = (id) => {
             let genreList = '';
             genres.forEach(item => {
                 genreList += `<li class="modal__item">${item.name}</li>`
-            })
+            });
 
            let card = `
                     <div class="modal__poster--container">
@@ -19,11 +19,11 @@ export const findById = (id) => {
                     </div>
                     <div class="modal__content">
                         <div class="modal__title--wrapper">
-                            <p class="modal__rate">${data.vote_average} / 10</p>
+                            <p class="modal__rate"><span class="modal__rate--sizeup"><i class="fas fa-star"></i> ${data.vote_average}</span> / 10</p>
                             <h1 class="modal__title">${data.title}</h1>
                             <ul class="modal__list">${genreList}</ul>
-                            <p class="modal__releaseDate">Release date: december 2020</p>
-                            <p clas="modal__runtime">Duration: ${data.runtime} minutes</p>
+                            <p class="modal__releaseDate">Release date: ${data.release_date}</p>
+                            <p clas="modal__runtime">Duration: ${data.runtime}min</p>
                         </div>
                         <div class="modal__synopsis--wrapper">
                             <h3 class="modal__overview--heading">Synopsis</h3>
@@ -31,7 +31,7 @@ export const findById = (id) => {
                             <a href="${data.homepage}" target="_blank" class="modal__button">Homepage <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>`;
-                    
+
             cardWrapper.innerHTML = card;
         })
         .catch(error => error)
