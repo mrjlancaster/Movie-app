@@ -137,14 +137,12 @@ var backdrop_image = 'https://image.tmdb.org/t/p/original/'; // Poster placehold
 
 // HANDLE SEARCH DISPLAY
 var displaySearch = function displaySearch(obj) {
-  var upcomingContainer = document.querySelector('.upcoming');
   var topRatedContainer = document.querySelector('.top__rated');
   var output = document.querySelector('.output');
   var heading = document.querySelector('.search__results--heading');
   var result = obj.results;
-  var count = obj.total_results; // clear container
+  var count = obj.total_results; // clear top rated container
 
-  upcomingContainer.classList.add('hideAll');
   topRatedContainer.classList.add('hideAll');
 
   if (count === 0) {
@@ -388,7 +386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55113" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61858" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

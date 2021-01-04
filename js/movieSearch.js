@@ -7,15 +7,13 @@ import posterPlaceholder from '../img/poster_unavailable.jpg';
 
 // HANDLE SEARCH DISPLAY
 export const displaySearch = (obj) => {
-    const upcomingContainer = document.querySelector('.upcoming');
     const topRatedContainer = document.querySelector('.top__rated');
     const output = document.querySelector('.output');
     const heading = document.querySelector('.search__results--heading');
     const result = obj.results;
     const count = obj.total_results;
 
-    // clear container
-    upcomingContainer.classList.add('hideAll');
+    // clear top rated container
     topRatedContainer.classList.add('hideAll');
 
     if (count === 0) {

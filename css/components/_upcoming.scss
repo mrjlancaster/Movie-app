@@ -1,16 +1,22 @@
 /* UPCOMING MOVIES */
 .upcoming {
-    margin-top: 100px;
-    height: auto;
-    height: 780px;
+    margin-top: 20px;
+    height: 480px;
+    max-height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.788);
+    border-radius: 2px;
+}
+
+.upcoming__movies {
+    height: 100%;
 }
 
 .upcoming__card--wrapper {
     display: flex;
+    height: 100%;
 }
 
 .upcoming__poster--container {
-    height: 680px;
     width: 50%;
     background-repeat: no-repeat;
     // background-size: cover;
