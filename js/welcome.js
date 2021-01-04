@@ -31,28 +31,4 @@ export const welcome = (obj) => {
             welcome.innerHTML = moviePoster;
         })
         .catch(error => error);
-        
-    // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-
-    
-
-    
-    // let movie = '';
-    // movies.forEach(item => {
-    //     movie +=`
-    //     <div class="upcoming__card--wrapper">
-    //         <div class="upcoming__poster--container">
-    //             <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
-    //         </div>
-    //         <div class="upcoming__description">
-    //             <h1 class="upcoming__title">${item.title}</h1>
-    //             <div>
-    //                 <p class="upcoming__story">Story</p>
-    //                 <p class="upcoming__story--description">${item.overview}</p>
-    //             </div>
-    //         </div>
-    //     </div>`;
-    // })
 }
