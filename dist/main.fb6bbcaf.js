@@ -174,15 +174,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.welcome = void 0;
-var imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+var imageBaseURL = 'https://image.tmdb.org/t/p/original/';
 
 var welcome = function welcome(obj) {
   var welcome = document.querySelector('.welcome');
-  var movie = obj.results[5];
+  var movie = obj.results[4];
   var poster = imageBaseURL + movie.backdrop_path;
   var title = movie.title;
   var overview = movie.overview;
-  var movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US';
+  var movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US'; // Add background poster to welcome container
+
+  welcome.style.backgroundImage = "url(".concat(poster, ")");
   console.log(obj); // get current movie info
 
   fetch(movieById_URL).then(function (response) {
@@ -190,9 +192,9 @@ var welcome = function welcome(obj) {
   }).then(function (movieById) {
     var genres = movieById.genres; // returns an array
 
-    var moviePoster = "\n                <div class=\"upcoming__card--wrapper\">\n                    <div class=\"upcoming__description\">\n                        <h1 class=\"upcoming__title\">".concat(title, "</h1>\n                        <p class=\"upcoming__genre\">").concat(genres[0].name, " <span class=\"genre__separator\">|</span> ").concat(genres[1].name, "</p>\n                        <div class=\"upcoming__overview\">\n                            <h3 class=\"overview__title\">The <br />Story</h3>\n                            <div>\n                                <p class=\"overview__description\">").concat(overview, "</p>\n                                <button type=\"button\" class=\"upcoming__button\">Read more <i class=\"fas fa-long-arrow-alt-right\"></i></button>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"upcoming__poster--container\" style=\"background-image: url(").concat(poster, ");\"></div>\n                </div>\n            "); // Output results
+    var moviePoster = "\n                <div class=\"welcome__content\">\n                    <h1 class=\"welcome__title\">".concat(title, "</h1>\n                    <div class=\"welcome__description--container\">\n                        <p class=\"welcome__description\">").concat(overview, "</p>\n                        <a href=\"#\" target=\"_blank\" class=\"welcome__button\">View more <i class=\"fas fa-long-arrow-alt-right\"></i></a>\n                    </div>\n                </div>"); // Output results
 
-    upcoming.innerHTML = moviePoster;
+    welcome.innerHTML = moviePoster;
   }).catch(function (error) {
     return error;
   }); // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)

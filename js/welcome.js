@@ -1,12 +1,15 @@
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+const imageBaseURL = 'https://image.tmdb.org/t/p/original/';
 
 export const welcome = (obj) => {
     const welcome = document.querySelector('.welcome');
-    const movie = obj.results[5];
+    const movie = obj.results[4];
     const poster = imageBaseURL + movie.backdrop_path;
     const title = movie.title;
     const overview = movie.overview;
-    const movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + process.env.API_KEY + '&language=en-US'
+    const movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + process.env.API_KEY + '&language=en-US';
+
+    // Add background poster to welcome container
+    welcome.style.backgroundImage = `url(${poster})`;
 
     console.log(obj);
     // get current movie info
@@ -16,24 +19,16 @@ export const welcome = (obj) => {
             const genres = movieById.genres; // returns an array
 
             let moviePoster = `
-                <div class="upcoming__card--wrapper">
-                    <div class="upcoming__description">
-                        <h1 class="upcoming__title">${title}</h1>
-                        <p class="upcoming__genre">${genres[0].name} <span class="genre__separator">|</span> ${genres[1].name}</p>
-                        <div class="upcoming__overview">
-                            <h3 class="overview__title">The <br />Story</h3>
-                            <div>
-                                <p class="overview__description">${overview}</p>
-                                <button type="button" class="upcoming__button">Read more <i class="fas fa-long-arrow-alt-right"></i></button>
-                            </div>
-                        </div>
+                <div class="welcome__content">
+                    <h1 class="welcome__title">${title}</h1>
+                    <div class="welcome__description--container">
+                        <p class="welcome__description">${overview}</p>
+                        <a href="#" target="_blank" class="welcome__button">View more <i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
-                    <div class="upcoming__poster--container" style="background-image: url(${poster});"></div>
-                </div>
-            `;
+                </div>`;
             
             // Output results
-            upcoming.innerHTML = moviePoster;
+            welcome.innerHTML = moviePoster;
         })
         .catch(error => error);
         
