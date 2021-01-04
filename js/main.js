@@ -17,11 +17,7 @@ const getData = (url, func) => {
     fetch(url)
         .then(response => response.json())
         .then(data => func(data))
-        .catch(error => {
-            if (error) {
-                console.log(error);
-            }
-        })
+        .catch(error => error)
 }
 
 //  SEARCH BAR EVENT LISTENERS
@@ -53,7 +49,11 @@ const searchMovie = () => {
 
 // Handle data
 const handleData = () => {
+    // handle welcome section
+    getData(upcoming_URL, welcome);
+    // handle upcoming movies
     getData(upcoming_URL, displayUpcomingMovies);
+    // handle top rated movies
     getData(topRated_URL, displayTopRatedMovies);
 }
 
