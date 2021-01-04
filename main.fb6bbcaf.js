@@ -168,53 +168,22 @@ var displaySearch = function displaySearch(obj) {
 
 exports.displaySearch = displaySearch;
 },{"../img/poster_unavailable.jpg":"img/poster_unavailable.jpg"}],"js/welcome.js":[function(require,module,exports) {
-
-},{}],"js/findById.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.findById = void 0;
-var imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
-var month = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-
-var findById = function findById(id) {
-  fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    var cardWrapper = document.querySelector('.modal__card');
-    console.log(data);
-    var genres = data.genres;
-    var releaseDate = data.release_date.split('-');
-    var genreList = '';
-    genres.forEach(function (item) {
-      genreList += "<li class=\"modal__item\">".concat(item.name, "</li>");
-    });
-    var card = "\n                    <div class=\"modal__poster--container\">\n                        <img src=".concat(imageBaseURL + data.poster_path, " alt=\"Poster\" class=\"modal__poster\">\n                    </div>\n                    <div class=\"modal__content\">\n                        <div class=\"modal__title--wrapper\">\n                            <p class=\"modal__rate\"><span class=\"modal__rate--sizeup\"><i class=\"fas fa-star\"></i> ").concat(data.vote_average, "</span> / 10</p>\n                            <h1 class=\"modal__title\">").concat(data.title, "</h1>\n                            <ul class=\"modal__list\">").concat(genreList, "</ul>\n                            <p class=\"modal__releaseDate\">Release date: ").concat(releaseDate[1], ", ").concat(releaseDate[2], ", ").concat(releaseDate[0], "</p>\n                            <p clas=\"modal__runtime\">Duration: ").concat(data.runtime, "min</p>\n                        </div>\n                        <div class=\"modal__synopsis--wrapper\">\n                            <h3 class=\"modal__overview--heading\">Synopsis</h3>\n                            <p class=\"modal__overview\">").concat(data.overview, "</p>\n                            <a href=\"").concat(data.homepage, "\" target=\"_blank\" class=\"modal__button\">Homepage <i class=\"fas fa-long-arrow-alt-right\"></i></a>\n                        </div>\n                    </div>");
-    cardWrapper.innerHTML = card;
-  }).catch(function (error) {
-    return error;
-  });
-};
-
-exports.findById = findById;
-},{}],"js/upcomingMovies.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.displayUpcomingMovies = void 0;
+exports.welcome = void 0;
 var imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
 
-var displayUpcomingMovies = function displayUpcomingMovies(obj) {
-  var upcoming = document.querySelector('.upcoming__movies');
+var welcome = function welcome(obj) {
+  var welcome = document.querySelector('.welcome');
   var movie = obj.results[5];
-  var poster = imageBaseURL + movie.poster_path;
+  var poster = imageBaseURL + movie.backdrop_path;
   var title = movie.title;
   var overview = movie.overview;
-  var movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US'; // get current movie info
+  var movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US';
+  console.log(obj); // get current movie info
 
   fetch(movieById_URL).then(function (response) {
     return response.json();
@@ -247,7 +216,91 @@ var displayUpcomingMovies = function displayUpcomingMovies(obj) {
   // })
 };
 
-exports.displayUpcomingMovies = displayUpcomingMovies;
+exports.welcome = welcome;
+},{}],"js/findById.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.findById = void 0;
+var imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+var month = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+var findById = function findById(id) {
+  fetch('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + "e52593a87eedaa85c0101c33dea06770" + '&language=en-US').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    var cardWrapper = document.querySelector('.modal__card');
+    console.log(data);
+    var genres = data.genres;
+    var releaseDate = data.release_date.split('-');
+    var genreList = '';
+    genres.forEach(function (item) {
+      genreList += "<li class=\"modal__item\">".concat(item.name, "</li>");
+    });
+    var card = "\n                    <div class=\"modal__poster--container\">\n                        <img src=".concat(imageBaseURL + data.poster_path, " alt=\"Poster\" class=\"modal__poster\">\n                    </div>\n                    <div class=\"modal__content\">\n                        <div class=\"modal__title--wrapper\">\n                            <p class=\"modal__rate\"><span class=\"modal__rate--sizeup\"><i class=\"fas fa-star\"></i> ").concat(data.vote_average, "</span> / 10</p>\n                            <h1 class=\"modal__title\">").concat(data.title, "</h1>\n                            <ul class=\"modal__list\">").concat(genreList, "</ul>\n                            <p class=\"modal__releaseDate\">Release date: ").concat(releaseDate[1], ", ").concat(releaseDate[2], ", ").concat(releaseDate[0], "</p>\n                            <p clas=\"modal__runtime\">Duration: ").concat(data.runtime, "min</p>\n                        </div>\n                        <div class=\"modal__synopsis--wrapper\">\n                            <h3 class=\"modal__overview--heading\">Synopsis</h3>\n                            <p class=\"modal__overview\">").concat(data.overview, "</p>\n                            <a href=\"").concat(data.homepage, "\" target=\"_blank\" class=\"modal__button\">Homepage <i class=\"fas fa-long-arrow-alt-right\"></i></a>\n                        </div>\n                    </div>");
+    cardWrapper.innerHTML = card;
+  }).catch(function (error) {
+    return error;
+  });
+};
+
+exports.findById = findById;
+},{}],"js/upcomingMovies.js":[function(require,module,exports) {
+// const imageBaseURL = 'https://image.tmdb.org/t/p/w500/';
+// export const displayUpcomingMovies = (obj) => {
+//     const upcoming = document.querySelector('.upcoming__movies');
+//     const movie = obj.results[5];
+//     const poster = imageBaseURL + movie.poster_path;
+//     const title = movie.title;
+//     const overview = movie.overview;
+//     const movieById_URL = 'https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=' + process.env.API_KEY + '&language=en-US'
+//     // get current movie info
+//     fetch(movieById_URL)
+//         .then(response => response.json())
+//         .then(movieById => {
+//             const genres = movieById.genres; // returns an array
+//             let moviePoster = `
+//                 <div class="upcoming__card--wrapper">
+//                     <div class="upcoming__description">
+//                         <h1 class="upcoming__title">${title}</h1>
+//                         <p class="upcoming__genre">${genres[0].name} <span class="genre__separator">|</span> ${genres[1].name}</p>
+//                         <div class="upcoming__overview">
+//                             <h3 class="overview__title">The <br />Story</h3>
+//                             <div>
+//                                 <p class="overview__description">${overview}</p>
+//                                 <button type="button" class="upcoming__button">Read more <i class="fas fa-long-arrow-alt-right"></i></button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div class="upcoming__poster--container" style="background-image: url(${poster});"></div>
+//                 </div>
+//             `;
+//             // Output results
+//             upcoming.innerHTML = moviePoster;
+//         })
+//         .catch(error => error);
+//     // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)
+//     //     .then(response => response.json())
+//     //     .then(data => console.log(data))
+//     // let movie = '';
+//     // movies.forEach(item => {
+//     //     movie +=`
+//     //     <div class="upcoming__card--wrapper">
+//     //         <div class="upcoming__poster--container">
+//     //             <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
+//     //         </div>
+//     //         <div class="upcoming__description">
+//     //             <h1 class="upcoming__title">${item.title}</h1>
+//     //             <div>
+//     //                 <p class="upcoming__story">Story</p>
+//     //                 <p class="upcoming__story--description">${item.overview}</p>
+//     //             </div>
+//     //         </div>
+//     //     </div>`;
+//     // })
+// }
 },{}],"js/topRatedMovies.js":[function(require,module,exports) {
 "use strict";
 
@@ -299,9 +352,7 @@ var getData = function getData(url, func) {
   }).then(function (data) {
     return func(data);
   }).catch(function (error) {
-    if (error) {
-      console.log(error);
-    }
+    return error;
   });
 }; //  SEARCH BAR EVENT LISTENERS
 
@@ -331,7 +382,11 @@ var searchMovie = function searchMovie() {
 
 
 var handleData = function handleData() {
-  getData(upcoming_URL, _upcomingMovies.displayUpcomingMovies);
+  // handle welcome section
+  getData(upcoming_URL, _welcome.welcome); // handle upcoming movies
+
+  getData(upcoming_URL, _upcomingMovies.displayUpcomingMovies); // handle top rated movies
+
   getData(topRated_URL, _topRatedMovies.displayTopRatedMovies);
 }; // Display movie info on click
 
