@@ -178,7 +178,7 @@ var imageBaseURL = 'https://image.tmdb.org/t/p/original/';
 
 var welcome = function welcome(obj) {
   var welcome = document.querySelector('.welcome');
-  var movie = obj.results[4];
+  var movie = obj.results[11];
   var poster = imageBaseURL + movie.backdrop_path;
   var title = movie.title;
   var overview = movie.overview;
