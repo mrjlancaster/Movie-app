@@ -2,7 +2,7 @@ const imageBaseURL = 'https://image.tmdb.org/t/p/original/';
 
 export const welcome = (obj) => {
     const welcome = document.querySelector('.welcome');
-    const movie = obj.results[4];
+    const movie = obj.results[11];
     const poster = imageBaseURL + movie.backdrop_path;
     const title = movie.title;
     const overview = movie.overview;
