@@ -1,4 +1,5 @@
 import { displaySearch } from './movieSearch.js';
+import { welcome } from './welcome.js';
 import { findById } from './findById.js';
 import { displayUpcomingMovies } from './upcomingMovies.js';
 import { displayTopRatedMovies } from './topRatedMovies.js';
@@ -50,13 +51,9 @@ const searchMovie = () => {
     getData(multipleSearch, displaySearch);
 }
 
-// Handle upcoming movies
-const handleUpcomingMovies = () => {
+// Handle data
+const handleData = () => {
     getData(upcoming_URL, displayUpcomingMovies);
-}
-
-// Handle top rated movies
-const handleTopRatedMovies = () => {
     getData(topRated_URL, displayTopRatedMovies);
 }
 
@@ -83,5 +80,4 @@ const handleModal = () => {
 }
 
 handleModal();
-handleUpcomingMovies();
-handleTopRatedMovies();
+handleData();
