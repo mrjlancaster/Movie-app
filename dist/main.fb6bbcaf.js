@@ -197,25 +197,7 @@ var welcome = function welcome(obj) {
     welcome.innerHTML = moviePoster;
   }).catch(function (error) {
     return error;
-  }); // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)
-  //     .then(response => response.json())
-  //     .then(data => console.log(data))
-  // let movie = '';
-  // movies.forEach(item => {
-  //     movie +=`
-  //     <div class="upcoming__card--wrapper">
-  //         <div class="upcoming__poster--container">
-  //             <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
-  //         </div>
-  //         <div class="upcoming__description">
-  //             <h1 class="upcoming__title">${item.title}</h1>
-  //             <div>
-  //                 <p class="upcoming__story">Story</p>
-  //                 <p class="upcoming__story--description">${item.overview}</p>
-  //             </div>
-  //         </div>
-  //     </div>`;
-  // })
+  });
 };
 
 exports.welcome = welcome;
@@ -442,7 +424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57096" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55675" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
