@@ -129,7 +129,7 @@ header {
   line-height: 1.6em;
   margin-top: 20px;
   max-height: 120px;
-  overflow: scroll;
+  overflow: auto;
   text-shadow: 2px 2px 5px #000;
 }
 
@@ -222,7 +222,7 @@ header {
 
 .top__rated--movies {
   display: flex;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .top__rated--wrapper {
@@ -235,15 +235,14 @@ header {
 
 .top__rated--poster {
   height: 350px;
-  border-radius: 10px;
   cursor: pointer;
 }
 
 .top__rated--title {
   color: #fff;
-  margin-top: 15px;
-  text-align: center;
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .top__rated--heading {
