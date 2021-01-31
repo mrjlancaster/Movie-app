@@ -197,25 +197,7 @@ var welcome = function welcome(obj) {
     welcome.innerHTML = moviePoster;
   }).catch(function (error) {
     return error;
-  }); // fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}&language=en-US`)
-  //     .then(response => response.json())
-  //     .then(data => console.log(data))
-  // let movie = '';
-  // movies.forEach(item => {
-  //     movie +=`
-  //     <div class="upcoming__card--wrapper">
-  //         <div class="upcoming__poster--container">
-  //             <img src=${imageBaseURL + item.poster_path} class="upcoming__poster" alt="" />
-  //         </div>
-  //         <div class="upcoming__description">
-  //             <h1 class="upcoming__title">${item.title}</h1>
-  //             <div>
-  //                 <p class="upcoming__story">Story</p>
-  //                 <p class="upcoming__story--description">${item.overview}</p>
-  //             </div>
-  //         </div>
-  //     </div>`;
-  // })
+  });
 };
 
 exports.welcome = welcome;
@@ -341,12 +323,12 @@ var _upcomingMovies = require("./upcomingMovies.js");
 
 var _topRatedMovies = require("./topRatedMovies.js");
 
-var searchInput = document.querySelector('.search__input');
-var searchButton = document.querySelector('.search');
+var searchInput = document.querySelector(".search__input");
+var searchButton = document.querySelector(".search");
 var api_key = "e52593a87eedaa85c0101c33dea06770";
-var multiSearch_url = 'https://api.themoviedb.org/3/search/multi?api_key=' + api_key + '&include_adult=false';
-var upcoming_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + api_key;
-var topRated_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key; // Get data
+var multiSearch_url = "https://api.themoviedb.org/3/search/multi?api_key=" + api_key + "&include_adult=false";
+var upcoming_URL = "https://api.themoviedb.org/3/movie/upcoming?api_key=" + api_key;
+var topRated_URL = "https://api.themoviedb.org/3/movie/top_rated?api_key=" + api_key; // Get data
 
 var getData = function getData(url, func) {
   fetch(url).then(function (response) {
@@ -359,8 +341,8 @@ var getData = function getData(url, func) {
 }; //  SEARCH BAR EVENT LISTENERS
 
 
-searchInput.addEventListener('keyup', function (e) {
-  if (searchInput.value === '') {
+searchInput.addEventListener("keyup", function (e) {
+  if (searchInput.value === "") {
     false;
   } else {
     if (e.keyCode === 13) {
@@ -368,8 +350,8 @@ searchInput.addEventListener('keyup', function (e) {
     }
   }
 });
-searchButton.addEventListener('click', function () {
-  if (searchInput.value === '') {
+searchButton.addEventListener("click", function () {
+  if (searchInput.value === "") {
     false;
   } else {
     searchMovie();
@@ -378,7 +360,7 @@ searchButton.addEventListener('click', function () {
 
 var searchMovie = function searchMovie() {
   var value = searchInput.value;
-  var multipleSearch = multiSearch_url + '&query=' + value;
+  var multipleSearch = multiSearch_url + "&query=" + value;
   getData(multipleSearch, _movieSearch.displaySearch);
 }; // Handle data
 
@@ -394,19 +376,19 @@ var handleData = function handleData() {
 
 
 var handleModal = function handleModal() {
-  var modal = document.querySelector('.modal');
-  var modalCard = document.querySelector('.modal__card');
-  var closeModal = document.querySelector('.close__modal');
-  closeModal.addEventListener('click', function () {
-    modalCard.innerHTML = '';
-    modal.classList.remove('isShown');
+  var modal = document.querySelector(".modal");
+  var modalCard = document.querySelector(".modal__card");
+  var closeModal = document.querySelector(".close__modal");
+  closeModal.addEventListener("click", function () {
+    modalCard.innerHTML = "";
+    modal.classList.remove("isShown");
   });
-  document.addEventListener('click', function (e) {
+  document.addEventListener("click", function (e) {
     var target = e.target;
     var movieID = target.dataset.movieId;
 
-    if (target.tagName.toLowerCase() === 'img') {
-      modal.classList.add('isShown');
+    if (target.tagName.toLowerCase() === "img") {
+      modal.classList.add("isShown");
       (0, _findById.findById)(movieID);
     }
   });
@@ -442,7 +424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57096" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52133" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
