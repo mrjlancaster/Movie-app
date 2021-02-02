@@ -4,20 +4,17 @@ import { findById } from "./findById.js";
 import { displayUpcomingMovies } from "./upcomingMovies.js";
 import { displayTopRatedMovies } from "./topRatedMovies.js";
 import { displayPopular } from "./popular.js";
+import { displayLatest } from "./latest.js";
 
 const searchInput = document.querySelector(".search__input");
 const searchButton = document.querySelector(".search");
 
 const api_key = process.env.API_KEY;
-const multiSearch_url =
-  "https://api.themoviedb.org/3/search/multi?api_key=" +
-  api_key +
-  "&include_adult=false";
-const upcoming_URL =
-  "https://api.themoviedb.org/3/movie/upcoming?api_key=" + api_key;
-const topRated_URL =
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=" + api_key;
+const multiSearch_url = "https://api.themoviedb.org/3/search/multi?api_key=" + api_key + "&include_adult=false";
+const upcoming_URL = "https://api.themoviedb.org/3/movie/upcoming?api_key=" + api_key;
+const topRated_URL = "https://api.themoviedb.org/3/movie/top_rated?api_key=" + api_key;
 const popular_URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key;
+const latest_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=1`;
 
 // Get data
 const getData = (url, func) => {
@@ -63,6 +60,8 @@ const handleData = () => {
   getData(topRated_URL, displayTopRatedMovies);
   // handle popular movies
   getData(popular_URL, displayPopular);
+  // handle latest movies
+  getData(latest_URL, displayLatest);
 };
 
 // Display movie info on click
