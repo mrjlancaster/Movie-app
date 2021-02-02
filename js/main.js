@@ -3,6 +3,7 @@ import { welcome } from "./welcome.js";
 import { findById } from "./findById.js";
 import { displayUpcomingMovies } from "./upcomingMovies.js";
 import { displayTopRatedMovies } from "./topRatedMovies.js";
+import { displayPopular } from "./popular.js";
 
 const searchInput = document.querySelector(".search__input");
 const searchButton = document.querySelector(".search");
@@ -16,6 +17,7 @@ const upcoming_URL =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=" + api_key;
 const topRated_URL =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=" + api_key;
+const popular_URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key;
 
 // Get data
 const getData = (url, func) => {
@@ -59,6 +61,8 @@ const handleData = () => {
   getData(upcoming_URL, displayUpcomingMovies);
   // handle top rated movies
   getData(topRated_URL, displayTopRatedMovies);
+  // handle popular movies
+  getData(popular_URL, displayPopular);
 };
 
 // Display movie info on click

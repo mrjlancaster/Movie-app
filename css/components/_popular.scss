@@ -1,0 +1,37 @@
+/* TOP RATED MOVIES */
+.popular {
+    margin-top: 100px;
+    height: auto;
+    padding: 10px 0;
+}
+
+.popular__movies {
+    display: flex;
+    overflow: auto;
+}
+
+.popular__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-right: 15px;
+    padding: 20px 0;
+}
+
+.popular__poster {
+    height: 350px;
+    cursor: pointer;
+}
+
+.popular__title {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.popular__heading {
+    margin-left: 10px;
+    color: #fff;
+    font-weight: 200;
+}
