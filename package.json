@@ -1,5 +1,5 @@
 {
-  "name": "movie-ui",
+  "name": "movie-app",
   "version": "1.0.0",
   "description": "Movie app. Search for any movie and tv show to get full description.",
   "main": "main.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrjlancaster/Movie-ui.git"
+    "url": "git+https://github.com/mrjlancaster/Movie-app.git"
   },
   "author": "Jonathan Lancaster",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrjlancaster/Movie-ui/issues"
+    "url": "https://github.com/mrjlancaster/Movie-app/issues"
   },
-  "homepage": "https://github.com/mrjlancaster/Movie-ui#readme",
+  "homepage": "https://github.com/mrjlancaster/Movie-app#readme",
   "dependencies": {
     "dotenv": "^8.2.0"
   },
