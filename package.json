@@ -4,8 +4,10 @@
   "description": "Movie app. Search for any movie and tv show to get full description.",
   "main": "main.js",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "dev": "parcel index.html",
-    "build": "parcel build index.html --public-url ./"
+    "parcel-build": "parcel build index.html --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -21,10 +23,10 @@
     "dotenv": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "sass": "^1.58.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.30.0"
+    "parcel-bundler": "^1.12.4"
   }
 }
