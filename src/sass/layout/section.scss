@@ -1,0 +1,16 @@
+.section {
+  margin-top: 100px;
+  height: auto;
+  padding: 10px 0;
+}
+
+.section_heading {
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 200;
+}
+
+.section_movies-container {
+  display: flex;
+  overflow: auto;
+}

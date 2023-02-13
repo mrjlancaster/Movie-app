@@ -3,14 +3,13 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import Section from "./components/Section";
-import { apiInstance } from "./components/api/axios";
+import Modal from "./components/Modal";
 import { getLatestMovies, getTopRatedMovies } from "./components/api/moviesApi";
 
 function App() {
   const [latestMovies, setLatestMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
-  const sections = ["upcoming", "latest", "popular", "top rated"];
 
   const getMovies = async () => {
     try {
@@ -38,7 +37,7 @@ function App() {
 
         <Section title="Playing on theatre NOW!" movies={latestMovies} />
         {/* <Section title="Popular Movies" movies={[]} /> */}
-        <Section title="Top Rated" movies={topRatedMovies} />
+        <Section title="Top Rated Movies" movies={topRatedMovies} />
 
         {/* <section className="upcoming">
           <div className="upcoming__movies"></div>
