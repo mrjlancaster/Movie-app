@@ -6,7 +6,14 @@ const Section = ({ title, movies }) => {
       <h3 className="popular__heading">{title}</h3>
       <div className="popular__movies">
         {movies.map((movie) => {
-          return <MovieCard />;
+          console.log(movie);
+          return (
+            <MovieCard
+              id={movie.id}
+              title={movie.title}
+              image={movie.backdrop_path}
+            />
+          );
         })}
       </div>
     </section>

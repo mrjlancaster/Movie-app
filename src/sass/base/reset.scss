@@ -8,12 +8,20 @@
 }
 
 /* GLOBAL STYLES */
+html,
 body {
+  height: 100%;
   background-color: #111518;
   font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  min-height: 100%;
 }
 
 .container {
+  min-height: calc(100vh - 100px);
   max-width: 1200px;
   margin: 0 auto 50px auto;
 }

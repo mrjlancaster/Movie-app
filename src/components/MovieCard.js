@@ -1,8 +1,15 @@
+const imageBaseURL = "https://image.tmdb.org/t/p/w342/";
+
 const MovieCard = ({ id, title, image }) => {
   return (
-    <div class="latest__wrapper">
-      {/* <img src=${imageBaseURL + item.poster_path} data-movie-id=${item.id} class="latest__poster" alt="" /> */}
-      <p class="latest__title">${title}</p>
+    <div className="latest__wrapper">
+      <img
+        src={imageBaseURL + image}
+        data-movie-id={id}
+        className="latest__poster"
+        alt=""
+      />
+      <p className="latest__title">{title}</p>
     </div>
   );
 };
