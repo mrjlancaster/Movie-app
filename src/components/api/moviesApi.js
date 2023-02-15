@@ -19,3 +19,13 @@ export const getTopRatedMovies = async () => {
     console.log(err);
   }
 };
+
+export const getMovieById = async (id) => {
+  try {
+    const res = await apiInstance.get(`/movie/${id}`);
+
+    return res;
+  } catch (err) {
+    console.log();
+  }
+};

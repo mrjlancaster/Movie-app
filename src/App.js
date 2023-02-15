@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import Section from "./components/Section";
 import Modal from "./components/Modal";
+import SearchResults from "./components/SearchResults";
 import { getLatestMovies, getTopRatedMovies } from "./components/api/moviesApi";
+import { ModalContext } from "./context/ModalContext";
 
 function App() {
+  const { isOpen: isModalOpen } = useContext(ModalContext);
   const [latestMovies, setLatestMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
@@ -31,34 +34,14 @@ function App() {
 
   return (
     <div className="App">
+      {isModalOpen && <Modal />}
       <div className="container">
         <Header />
         <Welcome />
 
+        <SearchResults />
         <Section title="Playing on theatre NOW!" movies={latestMovies} />
-        {/* <Section title="Popular Movies" movies={[]} /> */}
         <Section title="Top Rated Movies" movies={topRatedMovies} />
-
-        {/* <section className="upcoming">
-          <div className="upcoming__movies"></div>
-        </section>
-
-        <section className="latest">
-          <div className="latest__movies"></div>
-        </section>
-
-        <section className="popular">
-          <div className="popular__movies"></div>
-        </section>
-
-        <section className="top__rated">
-          <div className="top__rated--movies"></div>
-        </section> */}
-
-        <section className="search__results">
-          <p className="search__results--heading"></p>
-          <div className="output"></div>
-        </section>
       </div>
       <Footer />
     </div>

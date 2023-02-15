@@ -5,10 +5,10 @@ const Section = ({ title, movies }) => {
     <section className="section">
       <h3 className="section_heading">{title}</h3>
       <div className="section_movies-container">
-        {movies.map((movie) => {
-          console.log(movie);
+        {movies.map((movie, i) => {
           return (
             <MovieCard
+              key={i}
               id={movie.id}
               title={movie.title}
               image={movie.poster_path}
