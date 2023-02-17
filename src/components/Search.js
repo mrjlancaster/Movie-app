@@ -1,25 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { GoSearch } from "react-icons/go";
-import { apiInstance } from "./api/axios";
+import { search } from "./api/moviesApi";
+import { SearchContext } from "../context/SearchContext";
 
 const Search = () => {
   const [searchInput, setSearchInput] = useState("");
+  const { setResults, setSearchModeOn } = useContext(SearchContext);
 
   const handleSearch = async () => {
+    setSearchModeOn();
+
     try {
-      const splitSearch = searchInput.split(" ");
-      let searchValue;
+      const res = await search(searchInput);
+      console.log(res);
 
-      if (splitSearch.length > 1) {
-        for (let item of splitSearch) {
-          searchValue[0] += item;
-        }
-      }
-
-      console.log(searchValue);
-
-      const res = await apiInstance.get(`/search/movie?&query=${searchInput}`);
-      //   console.log(res);
+      setResults(res.data.results);
       setSearchInput("");
     } catch (err) {
       console.log(err);
@@ -37,7 +32,6 @@ const Search = () => {
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button onClick={handleSearch} type="button" className="search">
-          {/* <i className="fas fa-search"></i> */}
           <GoSearch />
         </button>
       </div>

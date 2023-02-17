@@ -32,7 +32,13 @@ const Welcome = () => {
         <h1 className="welcome__title">{title}</h1>
         <div className="welcome__description--container">
           <p className="welcome__description">{overview}</p>
-          <a href="#" target="_blank" className="welcome__button">
+
+          <a
+            href="#"
+            target="_blank"
+            // rel="noopener noreferrer"
+            className="welcome__button"
+          >
             View more <AiOutlineArrowRight className="action_btn-icon" />
           </a>
         </div>

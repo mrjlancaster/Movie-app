@@ -8,7 +8,6 @@ const MovieCard = ({ id, title, image }) => {
 
   const handlePosterClick = async () => {
     const { data } = await getMovieById(id);
-    console.log(data);
 
     const dateOptions = {
       year: "numeric",
@@ -26,7 +25,6 @@ const MovieCard = ({ id, title, image }) => {
       poster: "https://image.tmdb.org/t/p/w500" + data.poster_path,
       title: data.title,
       genres: data.genres,
-      // releaseDate: `${res.data.releaseDate[1]}, ${res.data.releaseDate[2]}`,
       releaseDate: releaseDate,
       duration: data.runtime,
       overview: data.overview,

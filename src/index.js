@@ -4,13 +4,16 @@ import "./sass/main.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ModalProvider from "./context/ModalContext";
+import SearchProvider from "./context/SearchContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ModalProvider>
-      <App />
-    </ModalProvider>
+    <SearchProvider>
+      <ModalProvider>
+        <App />
+      </ModalProvider>
+    </SearchProvider>
   </React.StrictMode>
 );
 

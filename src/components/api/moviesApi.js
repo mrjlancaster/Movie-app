@@ -37,3 +37,12 @@ export const getPopularMovies = async () => {
     console.log(err);
   }
 };
+
+export const search = async (value) => {
+  try {
+    const res = await apiInstance.get(`/search/multi?query=${value}`);
+    return res;
+  } catch (err) {
+    console.log(err);
+  }
+};
