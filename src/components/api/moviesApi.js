@@ -23,9 +23,17 @@ export const getTopRatedMovies = async () => {
 export const getMovieById = async (id) => {
   try {
     const res = await apiInstance.get(`/movie/${id}`);
-
     return res;
   } catch (err) {
-    console.log();
+    console.log(err);
+  }
+};
+
+export const getPopularMovies = async () => {
+  try {
+    const res = await apiInstance.get("/movie/popular?&language=en-US&page=1");
+    return res;
+  } catch (err) {
+    console.log(err);
   }
 };

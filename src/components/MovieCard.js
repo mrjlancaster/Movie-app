@@ -10,16 +10,24 @@ const MovieCard = ({ id, title, image }) => {
     const { data } = await getMovieById(id);
     console.log(data);
 
-    const releaseDateArr = data.release_date.split("/");
+    const dateOptions = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    const d = new Date(data.release_date.replace(/-/g, "/"));
+    const releaseDate = new Intl.DateTimeFormat("en-US", dateOptions).format(d);
+
     const voteAverageArr = String(data.vote_average).split(".");
     const ratings = `${voteAverageArr[0]}.${voteAverageArr[1][0]}`;
 
     const movieData = {
       poster: "https://image.tmdb.org/t/p/w500" + data.poster_path,
       title: data.title,
-      genreList: data.genreList,
+      genres: data.genres,
       // releaseDate: `${res.data.releaseDate[1]}, ${res.data.releaseDate[2]}`,
-      releaseDate: data.release_date,
+      releaseDate: releaseDate,
       duration: data.runtime,
       overview: data.overview,
       rating: ratings,

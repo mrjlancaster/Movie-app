@@ -13,6 +13,7 @@ const Welcome = () => {
     try {
       const { data } = await apiInstance.get("/movie/upcoming?");
       const movie = data.results[11];
+      console.log("movie", data.results);
       setTitle(movie.title);
       setOverview(movie.overview);
       setPoster(baseURL + movie.backdrop_path);

@@ -5,7 +5,11 @@ import Welcome from "./components/Welcome";
 import Section from "./components/Section";
 import Modal from "./components/Modal";
 import SearchResults from "./components/SearchResults";
-import { getLatestMovies, getTopRatedMovies } from "./components/api/moviesApi";
+import {
+  getLatestMovies,
+  getTopRatedMovies,
+  getPopularMovies,
+} from "./components/api/moviesApi";
 import { ModalContext } from "./context/ModalContext";
 
 function App() {
@@ -18,9 +22,11 @@ function App() {
     try {
       const latestMoviesRes = await getLatestMovies();
       const topRatedMoviesRes = await getTopRatedMovies();
+      const popularMoviesRes = await getPopularMovies();
 
       setLatestMovies(latestMoviesRes.data.results);
       setTopRatedMovies(topRatedMoviesRes.data.results);
+      setPopularMovies(popularMoviesRes.data.results);
 
       // const { data } = await apiInstance.get("/movie/upcoming?");
     } catch (err) {
@@ -42,6 +48,7 @@ function App() {
         <SearchResults />
         <Section title="Playing on theatre NOW!" movies={latestMovies} />
         <Section title="Top Rated Movies" movies={topRatedMovies} />
+        <Section title="Popular Movies" movies={popularMovies} />
       </div>
       <Footer />
     </div>

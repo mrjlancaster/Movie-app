@@ -39,11 +39,13 @@ const Modal = () => {
                 / 10
               </p>
               <h1 className="modal__title">{data.title}</h1>
-              <ul className="modal__list">{data.genreList}</ul>
+              <ul className="modal__list">
+                {data.genres.map((genre) => {
+                  return <li className="modal__item">{genre.name}</li>;
+                })}
+              </ul>
               <p className="modal__releaseDate">
-                Release date:
-                {/* Release date: {data.releaseDate[1]}, ${data.releaseDate[2]}, $
-                {data.releaseDate[0]} */}
+                Release date: {data.releaseDate}
               </p>
               <p className="modal__runtime">Duration: {data.duration} min</p>
             </div>
